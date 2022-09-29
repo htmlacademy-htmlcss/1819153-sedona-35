@@ -5,7 +5,7 @@
     <title>HTML Academy: Седона</title>
   </head>
   <body>
-    <header class="page-header">
+    <header class="page-header" data-test="header">
       <nav class="navigation">
 <!--Какой класс нужен для логотипа? logo?-->
         <a class="logo" href="#">
@@ -42,13 +42,14 @@
       </nav>
     </header>
 
-    <main>
+    <main data-test="main">
       <h1 class="visually-hidden">Гостиницы города Седона</h1>
-      <section class="hero">
+      <section class="hero" data-test="hero">
         <h2 class="visually-hidden">Туристический город Седона</h2>
         <img src="#" alt="#" class="hero-image">
       </section>
-      <section class="advantages">
+
+      <section class="advantages" data-test="advantages">
         <h2 class="visually-hidden">Преимущества города Седона</h2>
         <p class="advantages-header">Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
         <p class="advantages-text">Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
@@ -90,18 +91,17 @@
           </li>
         </ul>
       </section>
+
      <!--Форма бронирования-->
-      <section class="search-hotel">
+      <section class="search-hotel" data-test="search">
         <h2 class="visually-hidden">Запрос на поиск гостиницы в городе Седона</h2>
         <p class="question">Заинтересовались?</p>
         <p class="text">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
         <a href="#" class="button-link">Поиск гостиницы в Седоне</a>
       </section>
       <!--v3c validator валидировать верстку надо чтобы было все правильно, ссылка в скайпе-->
-    </main>
 
-    <footer class="page-footer">
-      <section class="subscription">
+      <section class="subscription" data-test="subscribe">
         <!--Форма подписки-->
         <h2 class="visually-hidden">Форма подписки на рассылку информации про город Седона</h2>
         <p class="subscription-call"></p>
@@ -118,7 +118,9 @@
           <button class="button subscription-button" type="submit"> <span>Подписаться</span> </button>
         </form>
       </section>
+    </main>
 
+    <footer class="page-footer" data-test="footer">
       <section class="footer-social">
         <!--список-1-social media,телефон как ссылка, img-->
         <h2 class="visually-hidden">Социальные сети</h2>
