@@ -7,9 +7,9 @@
   <body>
     <header class="page-header" data-test="header">
         <nav class="navigation">
-          <a class="logo" href="#">
-            <img src="#" alt="Логотип Седона">
-          </a>
+            <a class="navigation-logo" href="index.html">
+                <img class="page-header-logo" src="#" alt="Логотип Седона">
+            </a>
           <ul class="navigation-list">
             <li class="navigation-item">
               <a class="navigation-link" href="#">Главная</a>
@@ -18,7 +18,7 @@
               <a class="navigation-link" href="#">О Седоне</a>
             </li>
             <li class="navigation-item">
-              <a class="navigation-link" href="catalog.html">Гостиницы</a>
+              <a class="navigation-link navigation-link-current" href="catalog.html">Гостиницы</a>
             </li>
           </ul>
           <ul class="navigation-list">
@@ -41,10 +41,172 @@
         </nav>
     </header>
 
-    <main>
+    <main class="main-inner">
+        <header class="inner-header">
+            <h1 class="inner-header-title">Гостиницы Седоны</h1>
+        </header>
+
+        <!--Домик стрелочка Гостиницы-->
+        <ul class="breadcrumbs">
+            <li class="breadcrumbs-item">
+              <a class="breadcrumbs-link-home" href="index.html"> <span class="visually-hidden">Главная</span></a>
+            </li>
+            <li class="breadcrumbs-item">
+              <a class="breadcrumbs-link">Гостиницы</a>
+            </li>
+        </ul>
+
+<!--Выполнение действия для создания каталога https://up.htmlacademy.ru/htmlcss/35/demos/8467#7-->
+
+        <section class="catalog-products">
+         <h2 class="visually-hidden">Список параметров поиска гостиниц с фильтрами</h2>
+          <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
+            <fieldset class="catalog-filter-group">
+              <legend class="catalog-filter-title">Инфраструктура:</legend>
+              <ul class="catalog-filter-list">
+                <li class="catalog-filter-item">
+                    <label class="control">
+                      <input class="control-input" type="checkbox" name="swimmingpool" checked>
+
+                      Бассейн
+                    </label>
+                </li>
+                <li class="catalog-filter-item">
+                    <label class="control">
+                      <input class="control-input" type="checkbox" name="parking" checked>
+
+                      Парковка
+                    </label>
+                </li>
+                <li class="catalog-filter-item">
+                    <label class="control">
+                      <input class="control-input" type="checkbox" name="Wi-Fi">
+
+                      Wi-Fi
+                    </label>
+                </li>
+              </ul>
+            </fieldset>
+
+<!--Можно в value писать на русском, если это русские сайты?-->
+            <fieldset class="catalog-filter-group">
+              <legend class="catalog-filter-title">Тип жилья:</legend>
+              <ul class="catalog-filter-list">
+                <li class="catalog-filter-item">
+                    <label class="control">
+                        <input class="control-input" type="radio" name="product-group" value="hotel" checked>
+
+                        Гостиница
+                    </label>
+                </li>
+                <li class="catalog-filter-item">
+                    <label class="control">
+                        <input class="control-input" type="radio" name="product-group" value="motel">
+
+                        Мотель
+                    </label>
+                </li>
+                <li class="catalog-filter-item">
+                    <label class="control">
+                        <input class="control-input" type="radio" name="product-group" value="apartments">
+
+                        Апартаменты
+                    </label>
+                </li>
+              </ul>
+            </fieldset>
+
+<!--блок с ценой пока не размечать?-->
+            <fieldset class="catalog-filter-group">
+                <legend class="catalog-filter-title">Стоимость, ₽:</legend>
+
+            </fieldset>
 
 
+            <button class="button" type="submit">Применить</button>
+<!--кнопка Сбросить - так сделать?-->
+            <button class="button-reset" type="reset" value="reset">Сбросить</button>
+          </form>
 
+
+<!--Найдено гостиниц: 38-->
+
+
+<!--Сортировка
+В каком случае для select нужно задавать атрибуты name и id?-->
+          <select class="select-control" aria-label="Сортировка">
+            <option value="cheap">Сначала дешевые</option>
+            <option value="popular">Сначала популярные</option>
+            <option value="expensive">Сначала дорогие</option>
+          </select>
+
+<!--ссылки для смены вида карточек
+какие должны быть классы и что за список посередине?
+и должен ли быть здесь класс button?-->
+          <a class="button button-border" href="#">
+            <span class="visually-hidden">Показать карточки</span>
+          </a>
+          <a class="button button-light" href="#">
+            <span class="visually-hidden">Показать карточки с картинкой</span>
+          </a>
+          <a class="button button-light" href="#">
+            <span class="visually-hidden">Показать список</span>
+          </a>
+
+<!--Разметим карточки товаров.-->
+          <ul class="product-list">
+
+            <li class="product-card">
+                <a class="product-card-link" href="product.html">
+                    <img class="product-card-image" src="" alt="">
+                    <h3 class="product-card-title">Amara Resort & Spa</h3>
+                </a>
+                <p class="product-card-type">Гостиница</p>
+                <!--Цена От 4000 ₽-->
+                <a class="product-card-button button" href="#">Подробнее</a><!--Коричневая кнопка-->
+                <a class="product-card-button button" href="#">В избранное</a><!--Голубая кнопка-->
+                <!--Звезды 4-->
+                <!--Рейтинг: 8,5-->
+            </li>
+<!--Размножить для еще 4 карточек
+Как делать в избранном и с другим цветом?
+-->
+
+          </ul>
+
+
+<!--Сверстаем пагинацию. Это просто набор ссылок в списке и кнопка для подгрузки товаров.
+    Как сделать многоточие?
+    Нужна здесь предыдущая страницы и следующая?
+-->
+          <ul class="pagination">
+
+            <li class="pagination-item">
+              <a class="pagination-link pagination-current">1</a>
+            </li>
+            <li class="pagination-item">
+              <a class="pagination-link" href="#">2</a>
+            </li>
+            <li class="pagination-item">
+              <a class="pagination-link" href="#">3</a>
+            </li>
+            <li class="pagination-item">
+              <a class="pagination-link" href="#">4</a>
+            </li>
+            <li class="pagination-item">
+                <a class="pagination-link" href="#">...</a>
+              </li>
+            <li class="pagination-item">
+              <a class="pagination-link" href="#">10</a>
+            </li>
+          </ul>
+          <button class="button pagination-show-more" type="button">Показать ещё</button>
+
+
+        </section>
+
+
+<!--Подписка, относится к футеру, повтор section с главной страницы-->
         <section class="subscription-catalog" data-test="subscribe">
             <!--Форма подписки-->
             <h2 class="visually-hidden">Форма подписки на рассылку информации про город Седона</h2>
@@ -58,7 +220,10 @@
           </section>
         </main>
     </main>
-      <footer class="page-footer" data-test="footer">
+
+
+    <!--Футер-->
+    <footer class="page-footer" data-test="footer">
         <section class="footer-social">
           <!--список-1-social media,телефон как ссылка, img-->
           <h2 class="visually-hidden">Социальные сети</h2>
