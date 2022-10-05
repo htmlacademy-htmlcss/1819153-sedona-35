@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Каталог</title>
+    <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
     <header class="page-header" data-test="header">
@@ -42,9 +43,9 @@
     </header>
 
     <main class="main-inner">
-        <header class="inner-header">
-            <h1 class="inner-header-title">Гостиницы Седоны</h1>
-        </header>
+      <header class="inner-header">
+        <h1 class="inner-header-title">Гостиницы Седоны</h1>
+
 
         <!--Домик стрелочка Гостиницы-->
         <ul class="breadcrumbs">
@@ -55,6 +56,7 @@
               <a class="breadcrumbs-link">Гостиницы</a>
             </li>
         </ul>
+      </header>
 
 <!--Выполнение действия для создания каталога https://up.htmlacademy.ru/htmlcss/35/demos/8467#7-->
 
@@ -88,7 +90,7 @@
               </ul>
             </fieldset>
 
-<!--Можно в value писать на русском, если это русские сайты?-->
+<!--Можно в value писать на русском, если это русские сайты? Лучше ничего не писать на русском-->
             <fieldset class="catalog-filter-group">
               <legend class="catalog-filter-title">Тип жилья:</legend>
               <ul class="catalog-filter-list">
@@ -116,35 +118,37 @@
               </ul>
             </fieldset>
 
-<!--блок с ценой пока не размечать?-->
+<!--блок с ценой пока не размечать? Раздел 8 или 9-->
             <fieldset class="catalog-filter-group">
                 <legend class="catalog-filter-title">Стоимость, ₽:</legend>
-
+<!--0 - это input а от - это label. Range будем рисовать с помощью CSS, левый (мин граница цены) и правый (макс) элементы - активные, это button-->
             </fieldset>
 
 
             <button class="button" type="submit">Применить</button>
 <!--кнопка Сбросить - так сделать?-->
-            <button class="button-reset" type="reset" value="reset">Сбросить</button>
+            <button class="button-reset" type="reset">Сбросить</button>
           </form>
+        </section>
 
-
-<!--Найдено гостиниц: 38-->
-
+        <section>
+<!--Найдено гостиниц: 38. Добавить класс к п-->
+      <p>Найдено гостиниц: <span class="">38</span></p>
 
 <!--Сортировка
-В каком случае для select нужно задавать атрибуты name и id?-->
+В каком случае для select нужно задавать атрибуты name и id? id нужен если связывать с label, name для формы-->
           <select class="select-control" aria-label="Сортировка">
             <option value="cheap">Сначала дешевые</option>
             <option value="popular">Сначала популярные</option>
             <option value="expensive">Сначала дорогие</option>
           </select>
 
+
 <!--ссылки для смены вида карточек
 какие должны быть классы и что за список посередине?
 и должен ли быть здесь класс button?-->
           <a class="button button-border" href="#">
-            <span class="visually-hidden">Показать карточки</span>
+            <span class="visually-hidden">Список карточек</span>
           </a>
           <a class="button button-light" href="#">
             <span class="visually-hidden">Показать карточки с картинкой</span>
@@ -152,6 +156,8 @@
           <a class="button button-light" href="#">
             <span class="visually-hidden">Показать список</span>
           </a>
+
+
 
 <!--Разметим карточки товаров.-->
           <ul class="product-list">
@@ -162,23 +168,24 @@
                     <h3 class="product-card-title">Amara Resort & Spa</h3>
                 </a>
                 <p class="product-card-type">Гостиница</p>
-                <!--Цена От 4000 ₽-->
+                <p class="price">От 4000 ₽</p>
                 <a class="product-card-button button" href="#">Подробнее</a><!--Коричневая кнопка-->
                 <a class="product-card-button button" href="#">В избранное</a><!--Голубая кнопка-->
                 <!--Звезды 4-->
-                <!--Рейтинг: 8,5-->
+                <p class="raiting">Рейтинг: 8,5</p>
             </li>
 <!--Размножить для еще 4 карточек
-Как делать в избранном и с другим цветом?
+Как делать в избранном и с другим цветом - классом!
 -->
 
           </ul>
-
+        </section>
 
 <!--Сверстаем пагинацию. Это просто набор ссылок в списке и кнопка для подгрузки товаров.
     Как сделать многоточие?
     Нужна здесь предыдущая страницы и следующая?
 -->
+        <section>
           <ul class="pagination">
 
             <li class="pagination-item">
@@ -200,9 +207,6 @@
               <a class="pagination-link" href="#">10</a>
             </li>
           </ul>
-          <button class="button pagination-show-more" type="button">Показать ещё</button>
-
-
         </section>
 
 
@@ -218,7 +222,7 @@
               <button class="button subscription-button" type="submit"> <span>Подписаться</span> </button>
             </form>
           </section>
-        </main>
+
     </main>
 
 
@@ -259,3 +263,11 @@
       </footer>
   </body>
 </html>
+
+<!--Блок для редактирования кода - здесь можно не только изменять код для просмотра как это будет выглядеть, но и применять? Так что перепишется html код? то есть так может сделать любой человек или только тот, у кого есть логин и пароль?-->
+<!--Editconfig в видео речь про тестирование - автотесты. Это как? Что тестируется?-->
+<!--Как сделать пулреквест? поняла
+Никогда не называть файлы с большой буквы. Перенаименовать все файлы
+
+
+CSS - подключить шрифты, назначить всем текстам-->
