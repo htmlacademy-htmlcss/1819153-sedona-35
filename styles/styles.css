@@ -49,9 +49,8 @@ body {
 }
 
 .hero {
-  background-image: url("images/hero-background.jpeg"); /*почему не работает?*/
+  background-image: url("../images/hero-background.jpeg"); /*почему не работает?*/
   color: #000000;
-  background: red;
   background-repeat: no-repeat;
   background-size: 100% auto;
 }
