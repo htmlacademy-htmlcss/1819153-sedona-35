@@ -55,6 +55,10 @@ body {
   background-size: 100% auto;
 }
 
+.hero-image {
+  align-content: center;
+}
+
 .advantages-header,
 .question,
 .subscription-call {
@@ -150,6 +154,18 @@ body {
   background-color: #FFFFFF; /*зачем указывать background-color? у нас же в body указан уже background*/
   text-decoration: none;
   text-transform: capitalize;
+}
+
+.button-link {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  background: #756157;
+  border-radius: 4px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 
