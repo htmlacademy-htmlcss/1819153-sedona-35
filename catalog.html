@@ -44,56 +44,55 @@
         </nav>
     </header>
 
-    <main class="main-inner">
-      <header class="inner-header">
-        <h1 class="inner-header-title">Гостиницы Седоны</h1>
+    <main class="catalog-page">
+      <section class="filter">
+        <section class="filter-header">
+          <h1 class="filter-header-title">Гостиницы Седоны</h1>
 
 
         <!--Домик стрелочка Гостиницы-->
-        <ul class="breadcrumbs">
+          <ul class="breadcrumbs">
             <li class="breadcrumbs-item">
               <a class="breadcrumbs-link-home" href="index.html">
                 <svg width="13" height="13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m6.5.5-6 5.8v6.2h12V6.3L6.5.5Zm5 11h-10V6.7l5-4.8 5 4.8v4.8Z" fill="#fff"/><path d="M4.5 10.5h1V8h2v2.5h1V7h-4v3.5Z" fill="#fff"/></svg>
                 <span class="visually-hidden">Главная</span>
               </a>
             </li>
-<!--Это стрелочка и это новое-->
+
+            <!--Это стрелочка и это новое-->
             <li class="breadcrumbs-item">
               <svg width="8" height="11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.92 4.97 2.17.72c-.25-.25-.75-.25-1.13 0-.37.25-.25.75 0 1l4.13 3.75-4 3.75a.76.76 0 0 0 0 1c0 .12.37.25.5.25.12 0 .37-.13.5-.25l4.75-4.25a.59.59 0 0 0 0-1Z" fill="#fff"/></svg>
             </li>
-<!--Конец-->
+
+          <!--Конец-->
             <li class="breadcrumbs-item">
               <a class="breadcrumbs-link">Гостиницы</a>
             </li>
-        </ul>
-      </header>
+          </ul>
+        </section>
 
-<!--Выполнение действия для создания каталога https://up.htmlacademy.ru/htmlcss/35/demos/8467#7-->
-
-        <section class="catalog-products">
+<!-- надо или нет section здесь менять на див?  -->
+        <section class="filter-catalog-products">
          <h2 class="visually-hidden">Список параметров поиска гостиниц с фильтрами</h2>
-          <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
-            <fieldset class="catalog-filter-group">
-              <legend class="catalog-filter-title">Инфраструктура:</legend>
-              <ul class="catalog-filter-list">
-                <li class="catalog-filter-item">
+          <form class="filter-catalog" action="https://echo.htmlacademy.ru/" method="get">
+            <fieldset class="filter-catalog-group">
+              <legend class="filter-catalog-title">Инфраструктура:</legend>
+              <ul class="filter-catalog-list">
+                <li class="filter-catalog-item">
                     <label class="control">
                       <input class="control-input" type="checkbox" name="swimmingpool" checked>
-
                       Бассейн
                     </label>
                 </li>
-                <li class="catalog-filter-item">
+                <li class="filter-catalog-item">
                     <label class="control">
                       <input class="control-input" type="checkbox" name="parking" checked>
-
                       Парковка
                     </label>
                 </li>
-                <li class="catalog-filter-item">
+                <li class="filter-catalog-item">
                     <label class="control">
                       <input class="control-input" type="checkbox" name="Wi-Fi">
-
                       Wi-Fi
                     </label>
                 </li>
@@ -101,27 +100,24 @@
             </fieldset>
 
 <!--Можно в value писать на русском, если это русские сайты? Лучше ничего не писать на русском-->
-            <fieldset class="catalog-filter-group">
-              <legend class="catalog-filter-title">Тип жилья:</legend>
-              <ul class="catalog-filter-list">
-                <li class="catalog-filter-item">
+            <fieldset class="filter-catalog-group">
+              <legend class="filter-catalog-title">Тип жилья:</legend>
+              <ul class="filter-catalog-list">
+                <li class="filter-catalog-item">
                     <label class="control">
                         <input class="control-input" type="radio" name="product-group" value="hotel" checked>
-
                         Гостиница
                     </label>
                 </li>
-                <li class="catalog-filter-item">
+                <li class="filter-catalog-item">
                     <label class="control">
                         <input class="control-input" type="radio" name="product-group" value="motel">
-
                         Мотель
                     </label>
                 </li>
-                <li class="catalog-filter-item">
+                <li class="filter-catalog-item">
                     <label class="control">
                         <input class="control-input" type="radio" name="product-group" value="apartments">
-
                         Апартаменты
                     </label>
                 </li>
@@ -130,7 +126,7 @@
 
 <!--блок с ценой пока не размечать? Раздел 8 или 9-->
             <fieldset class="catalog-filter-group">
-                <legend class="catalog-filter-title">Стоимость, ₽:</legend>
+                <legend class="filter-catalog-title">Стоимость, ₽:</legend>
 <!--0 - это input а от - это label. Range будем рисовать с помощью CSS, левый (мин граница цены) и правый (макс) элементы - активные, это button-->
             </fieldset>
 
@@ -140,11 +136,12 @@
             <button class="button-reset" type="reset">Сбросить</button>
           </form>
         </section>
+      </section>
 
-        <section>
+      <section class="filter-results">
 
 <!--Найдено гостиниц: 38. Добавить класс к п-->
-          <p>Найдено гостиниц: <span class="search-result">38</span></p>
+        <p class="search-results">Найдено гостиниц: <span>38</span></p>
 
 <!--Сортировка
 В каком случае для select нужно задавать атрибуты name и id? id нужен если связывать с label, name для формы-->
@@ -158,54 +155,94 @@
 
 <!--ссылки для смены вида карточек
 какие должны быть классы и что за список посередине?
-и должен ли быть здесь класс button?-->
-          <a class="button button-border" href="#">
+и должен ли быть здесь класс button?
+надо в отдельную section выделять?-->
+          <a class="button-border" href="#">
             <svg width="16" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 12H0v2h16v-2ZM14 2v6H2V2h12Zm2-2H0v10h16V0Z" fill="#000"/></svg>
             <span class="visually-hidden">Список карточек</span>
           </a>
-          <a class="button button-light" href="#">
+          <a class="button-light" href="#">
             <svg width="16" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 0H0v2h2V0ZM16 0H4v2h12V0ZM2 4H0v2h2V4ZM16 4H4v2h12V4ZM2 8H0v2h2V8ZM16 8H4v2h12V8ZM2 12H0v2h2v-2ZM16 12H4v2h12v-2Z" fill="#000"/></svg>
             <span class="visually-hidden">Показать карточки с картинкой</span>
           </a>
-          <a class="button button-light" href="#">
+          <a class="button-light" href="#">
             <svg width="16" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 0H0v6h4V0ZM16 0h-4v6h4V0ZM10 0H6v6h4V0ZM4 8H0v6h4V8ZM16 8h-4v6h4V8ZM10 8H6v6h4V8Z" fill="#000"/></svg>
             <span class="visually-hidden">Показать список</span>
           </a>
 
-        </section>
+      </section>
 
-        <section>
+      <section class="product">
 <!--Разметим карточки товаров.-->
-          <ul class="product-list">
+        <ul class="product-list">
 
-            <li class="product-card">
-                <a class="product-card-link" href="product.html">
-                    <img class="product-card-image" src="" alt="">
-                    <h3 class="product-card-title">Amara Resort & Spa</h3>
-                </a>
-                <p class="product-card-type">Гостиница</p>
-                <p class="price">От 4000 ₽</p>
-                <a class="product-card-button button" href="#">Подробнее</a><!--Коричневая кнопка-->
-                <a class="product-card-button button" href="#">В избранное</a><!--Голубая кнопка-->
+          <li class="product-card">
+            <a class="product-card-link" href="product.html">
+              <img class="product-card-image" src="/images/catalog/photo-catalog-1.jpeg" alt="" width="300" height="212">
+              <h3 class="product-card-title">Amara Resort & Spa</h3>
+            </a>
+            <p class="product-card-type">Гостиница</p>
+            <p class="price">От 4000 ₽</p>
+            <a class="product-card-button" href="#">Подробнее</a><!--Коричневая кнопка-->
+            <a class="product-card-button-favorite" href="#">В избранное</a><!--Голубая кнопка-->
                 <!--Звезды 4-->
-                <p class="raiting">Рейтинг: 8,5</p>
-            </li>
+            <p class="raiting">Рейтинг: 8,5</p>
+          </li>
+
+          <li class="product-card">
+            <a class="product-card-link" href="product.html">
+              <img class="product-card-image" src="/images/catalog/photo-catalog-2.jpeg" alt="" width="300" height="212">
+              <h3 class="product-card-title">Villas at Poco Diablo</h3>
+            </a>
+            <p class="product-card-type">Гостиница</p>
+            <p class="price">От 5000 ₽</p>
+            <a class="product-card-button" href="#">Подробнее</a><!--Коричневая кнопка. Куда ссылка должна вести?-->
+            <a class="product-card-button-selected" href="#">В избранном</a><!--Голубая кнопка-->
+                <!--Звезды 4-->
+            <p class="raiting">Рейтинг: 9,2</p>
+          </li>
+
+          <li class="product-card">
+            <a class="product-card-link" href="product.html">
+              <img class="product-card-image" src="/images/catalog/photo-catalog-3.jpeg" alt="" width="300" height="212">
+              <h3 class="product-card-title">Desert Quail Inn</h3>
+            </a>
+            <p class="product-card-type">Гостиница</p>
+            <p class="price">От 2500 ₽</p>
+            <a class="product-card-button" href="#">Подробнее</a><!--Коричневая кнопка-->
+            <a class="product-card-button-favorite" href="#">В избранное</a><!--Голубая кнопка-->
+                <!--Звезды 3-->
+            <p class="raiting">Рейтинг: 6,9</p>
+          </li>
+
+          <li class="product-card">
+            <a class="product-card-link" href="product.html">
+              <img class="product-card-image" src="/images/catalog/photo-catalog-4.jpeg" alt="" width="300" height="212">
+              <h3 class="product-card-title">GreenTree Inn</h3>
+            </a>
+            <p class="product-card-type">Гостиница</p>
+            <p class="price">От 1500 ₽</p>
+            <a class="product-card-button" href="#">Подробнее</a><!--Коричневая кнопка-->
+            <a class="product-card-button-favorite" href="#">В избранное</a><!--Голубая кнопка-->
+                <!--Звезды 4-->
+            <p class="raiting">Рейтинг: 5,0</p>
+          </li>
 <!--Размножить для еще 4 карточек
 Как делать в избранном и с другим цветом - классом!
 -->
 
-          </ul>
-        </section>
+        </ul>
+      </section>
 
 <!--Сверстаем пагинацию. Это просто набор ссылок в списке и кнопка для подгрузки товаров.
     Как сделать многоточие?
     Нужна здесь предыдущая страницы и следующая?
 -->
-        <section>
+      <section class="pagination-section">
           <ul class="pagination">
 
             <li class="pagination-item">
-              <a class="pagination-link pagination-current">1</a>
+              <a class="pagination-link-current">1</a>
             </li>
             <li class="pagination-item">
               <a class="pagination-link" href="#">2</a>
@@ -218,27 +255,27 @@
             </li>
             <li class="pagination-item">
 <!--Троеточие это ссылка или p?-->
-                <a class="pagination-link" href="#">...</a>
+                <a class="pagination-link-dots" href="#">...</a>
               </li>
             <li class="pagination-item">
               <a class="pagination-link" href="#">10</a>
             </li>
           </ul>
-        </section>
+      </section>
 
 
 <!--Подписка, относится к футеру, повтор section с главной страницы-->
-        <section class="subscription-catalog" data-test="subscribe">
+      <section class="subscription-catalog" data-test="subscribe">
             <!--Форма подписки-->
             <h2 class="visually-hidden">Форма подписки на рассылку информации про город Седона</h2>
-            <p class="subscription-call"></p>
-            <p class="subscription-description">Только полезная информация и никакого спама, честное бойскаутское!</p>
+            <p class="subscription-call-catalog">Подпишитесь на рассылку</p>
+            <p class="subscription-description-catalog">Только полезная информация и никакого спама, честное бойскаутское!</p>
             <form class="subscription-form" action="https://echo.htmlacademy.ru/" method="post">
               <label class="visually-hidden" for="subscription-email">Email</label>
               <input class="field" placeholder="Ваш e-mail" type="email" name="subscription-email" id="subscription-email">
               <button class="button subscription-button" type="submit"> <span>Подписаться</span> </button>
             </form>
-          </section>
+      </section>
 
     </main>
 
@@ -250,18 +287,18 @@
         <h2 class="visually-hidden">Социальные сети</h2>
         <ul class="social-list-footer">
           <li class="social-item-footer">
-            <a href="https://vk.com/htmlacademy" class="button">
+            <a href="https://vk.com/htmlacademy" class="button-social">
               <span class="visually-hidden">Vkontakte</span>
               <svg width="25" height="15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M24.12 1.8c.16-.54 0-.94-.8-.94H20.7c-.67 0-.98.34-1.15.73 0 0-1.33 3.2-3.22 5.27-.61.6-.9.8-1.23.8-.16 0-.41-.2-.41-.75v-5.1c0-.66-.19-.95-.74-.95H9.82c-.42 0-.67.3-.67.59 0 .62.95.76 1.04 2.51v3.8c0 .83-.15.98-.48.98-.9 0-3.06-3.2-4.34-6.88-.25-.72-.5-1-1.18-1H1.57c-.75 0-.9.34-.9.73 0 .68.89 4.07 4.14 8.55 2.17 3.06 5.23 4.72 8 4.72 1.68 0 1.88-.37 1.88-1v-2.32c0-.74.16-.88.7-.88.38 0 1.05.19 2.6 1.66 1.79 1.75 2.08 2.54 3.08 2.54h2.63c.75 0 1.12-.37.9-1.1-.23-.72-1.08-1.77-2.2-3.02-.62-.71-1.54-1.48-1.82-1.86-.39-.5-.28-.71 0-1.15 0 0 3.2-4.42 3.54-5.93Z" fill="#83B3D3"/></svg>
             </a>
           </li>
           <li class="social-item-footer">
-            <a href="https://t.me/htmlacademy " class="button">
+            <a href="https://t.me/htmlacademy " class="button-social">
               <span class="visually-hidden">Telegram</span>
               <svg width="18" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.79.96.84 7.1c-1.09.44-1.08 1.05-.2 1.32l4.1 1.28 9.47-5.98c.44-.27.85-.13.52.17l-7.68 6.93-.28 4.22c.41 0 .6-.2.83-.41l1.99-1.94 4.13 3.06c.77.42 1.31.2 1.5-.71l2.72-12.8c.28-1.1-.43-1.61-1.16-1.28Z" fill="#83B3D3"/></svg>            </a>
           </li>
           <li class="social-item-footer">
-            <a href="https://www.youtube.com/user/htmlacademyru" class="button">
+            <a href="https://www.youtube.com/user/htmlacademyru" class="button-social">
               <span class="visually-hidden">Youtube</span>
               <svg width="23" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.94.36H3.51C1.65.36.33 1.95.33 3.76v10.09c0 1.91 1.32 3.5 3.18 3.5h15.65c1.64 0 3.17-1.59 3.17-3.4V3.76c-.22-1.8-1.53-3.4-3.39-3.4ZM7.99 12.89V4.82l7.34 4.04-7.34 4.03Z" fill="#83B3D3"/></svg>
             </a>
@@ -283,7 +320,9 @@
         </section>
 
     </footer>
+
   </body>
+
 </html>
 
 <!--Блок для редактирования кода - здесь можно не только изменять код для просмотра как это будет выглядеть, но и применять? Так что перепишется html код? то есть так может сделать любой человек или только тот, у кого есть логин и пароль?-->
