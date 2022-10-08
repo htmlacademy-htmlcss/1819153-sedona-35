@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
+    <div class="page-container">
     <header class="page-header" data-test="header">
         <nav class="navigation">
           <a class="logo-link" href="index.html">
@@ -19,7 +20,7 @@
               <a class="navigation-link" href="#">О Седоне</a>
             </li>
             <li class="navigation-item">
-              <a class="navigation-link navigation-link-current" href="catalog.html">Гостиницы</a>
+              <a class="navigation-link navigation-link-current">Гостиницы</a>
             </li>
           </ul>
           <ul class="navigation-list">
@@ -72,7 +73,7 @@
         </section>
 
 <!-- надо или нет section здесь менять на див?  -->
-        <section class="filter-catalog-products">
+        <section class="filter-catalog-products" data-test="filter">
          <h2 class="visually-hidden">Список параметров поиска гостиниц с фильтрами</h2>
           <form class="filter-catalog" action="https://echo.htmlacademy.ru/" method="get">
             <fieldset class="filter-catalog-group">
@@ -132,13 +133,13 @@
 
 
             <button class="button" type="submit">Применить</button>
-<!--кнопка Сбросить - так сделать?-->
+<!--кнопка Сбросить - так сделать? да-->
             <button class="button-reset" type="reset">Сбросить</button>
           </form>
         </section>
       </section>
 
-      <section class="filter-results">
+      <section class="filter-results" data-test="search">
 
 <!--Найдено гостиниц: 38. Добавить класс к п-->
         <p class="search-results">Найдено гостиниц: <span>38</span></p>
@@ -172,7 +173,7 @@
 
       </section>
 
-      <section class="product">
+      <section class="product" data-test="catalog">
 <!--Разметим карточки товаров.-->
         <ul class="product-list">
 
@@ -255,7 +256,7 @@
             </li>
             <li class="pagination-item">
 <!--Троеточие это ссылка или p?-->
-                <a class="pagination-link-dots" href="#">...</a>
+                <span class="pagination-link-dots">...</span>
               </li>
             <li class="pagination-item">
               <a class="pagination-link" href="#">10</a>
@@ -272,8 +273,8 @@
             <p class="subscription-description-catalog">Только полезная информация и никакого спама, честное бойскаутское!</p>
             <form class="subscription-form" action="https://echo.htmlacademy.ru/" method="post">
               <label class="visually-hidden" for="subscription-email">Email</label>
-              <input class="field" placeholder="Ваш e-mail" type="email" name="subscription-email" id="subscription-email">
-              <button class="button subscription-button" type="submit"> <span>Подписаться</span> </button>
+              <input class="subscription-form-email" placeholder="Ваш e-mail" type="email" name="subscription-email" id="subscription-email">
+              <button class="subscription-button" type="submit"> <span>Подписаться</span> </button>
             </form>
       </section>
 
@@ -320,7 +321,7 @@
         </section>
 
     </footer>
-
+  </div>
   </body>
 
 </html>
@@ -334,8 +335,8 @@
 CSS - подключить шрифты, назначить всем текстам
 
 5/10
-строки 19 и 22 - в меню на главную, о седоне и гостиницы - не должно быть ссылки в меню Гостиницы?-->
+строки 19 и 22 - в меню на главную, о седоне и гостиницы - не должно быть ссылки в меню Гостиницы? +-->
 <!--строки 159 - ссылки для смены вида карточек
   какие должны быть классы и что за список посередине?
-  и должен ли быть здесь класс button?-->
-<!--Троеточие это ссылка или p?-->
+  и должен ли быть здесь класс button? оставить коммент, что убрать svg в стили-->
+<!--Троеточие это ссылка или p - сделать span-->

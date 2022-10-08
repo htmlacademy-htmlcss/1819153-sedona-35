@@ -1,6 +1,5 @@
 @font-face {
   font-family: "PT Sans";
-  font-style: normal;
   font-weight: 400;
   src: url("../fonts/ptsans-400.woff2") format("woff2");
   font-display: swap;
@@ -8,29 +7,30 @@
 
 @font-face {
   font-family: "PT Sans";
-  font-style: normal;
   font-weight: 700;
   src: url("../fonts/ptsans-700.woff2") format("woff2");
   font-display: swap;
 }
 
-/*надо italic подключать?*/
-
 body {
   font-family: "PT Sans", "Arial", sans-serif;
-  font-style: normal;
   font-weight: 400;
   /* какой здесь лучше размер указывать? */
   font-size: 22px;
   line-height: 26px;
   color: #333333;
-  background: #FFFFFF;
+  background: #f2f2f2;
+  margin: 0%;
 }
 
-/*.title - заменить класс{
-  font-weight: 700;
-  color: #000000;
-}*/
+.page-container {
+  width: 1200px;
+  background: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
 /* в любых селекторах нужно будет написать только особенности начертания*/
 
 
@@ -38,28 +38,52 @@ body {
   color: #000000;
 }
 
+.navigation-list,
+.advantages-list,
+.assortment-list,
+.social-list-footer,
+.pagination-item,
+.breadcrumbs-item,
+.filter-catalog-item,
+.product-card {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .navigation-link {
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   color: #000000;
-  background-color: #FFFFFF; /*зачем указывать background-color? у нас же в body указан уже background*/
+  /* background-color: #ffffff; зачем указывать background-color? у нас же в body указан уже background - смысла нет и убрать background-color */
   text-decoration: none;
   text-transform: capitalize;
-  text-align: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
 }
 
 .hero {
-  background-image: url("../images/hero-background.jpeg");
-  /* а размеры для бэкграунда где указывать? */
+  width: 1200px;
+  height: 485px;
+  margin: 0 auto;
+  background-color: #f2f2f2;
+  background-image: url("../images/divider.svg"), url("../images/hero-background.jpeg");
+/* а размеры для бэкграунда где указывать?
+images/divider.svg*/
+  background-position: center bottom, center;
   color: #000000;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-}
-
-/* как разместить картинку по центру? */
-.hero-image {
-  align-content: center;
+  background-repeat: no-repeat, no-repeat;
+  text-align: center;
 }
 
 .advantages-header,
@@ -69,7 +93,6 @@ body {
   font-weight: 700;
   line-height: 36px;
   color: #000000;
-  background: #FFFFFF; /*это надо или как?*/
   text-align: center;
   text-transform: uppercase;
 }
@@ -80,23 +103,19 @@ body {
   text-align: center;
 }
 
-.advantages-item:nth-child(1),
-.advantages-item:nth-child(5) {
+.advantages-item-darkblue {
   background: #82B3D3;
-
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
-.advantages-item:nth-child(even),
-.assortment-item:nth-child(odd) {
+.advantages-item-lightblue,
+.assortment-item-lightblue {
   background: rgba(131, 179, 211, 0.12);
-
   color: #000000;
 }
 
-.advantages-item:nth-child(3) {
+.advantages-item-mediumblue {
   background: rgba(131, 179, 211, 0.2);
-
   color: #000000;
 }
 
@@ -109,8 +128,17 @@ body {
   text-align: center;
 }
 
-.advantages-item:nth-child(even) .advantages-description,
-.advantages-item:nth-child(3) .advantages-description,
+.assortment-title-nobg{
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #000000;
+}
+
+.advantages-item-lightblue .advantages-description,
+.advantages-item-mediumblue .advantages-description,
 .assortment-description {
   font-weight: 400;
   font-size: 18px;
@@ -119,8 +147,7 @@ body {
   text-align: center;
 }
 
-.advantages-item:nth-child(1) .advantages-description,
-.advantages-item:nth-child(5) .advantages-description {
+.advantages-item-darkblue .advantages-description {
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
@@ -128,11 +155,16 @@ body {
 }
 
 .subscription {
+  width: 1200px;
+  height: 415px;
   background-image: url(../images/subscribe-background.jpeg);
  /* почему не работает картинка? */
   color: #000000;
   background-repeat: no-repeat;
   background-size: 100% auto;
+  border: 1px solid #000000;
+  background-position: top center;
+  text-align: center;
 }
 .subscription-call {
   font-weight: 700;
@@ -148,12 +180,20 @@ body {
   text-align: center;
 }
 
-/*как сделать шрифт для Ваш email? и как отцентровать?*/
-.subscription-form {
-  align-items: center;
+.subscription-form-email {
+  width: 452px;
+  height: 52px;
+  font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-  color: aquamarine;
+  color: #000000;
+}
+
+.subscription-form-email::placeholder {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .footer-phone {
@@ -185,10 +225,15 @@ body {
 
 /* Каталог */
 .filter {
+  position: absolute;
+  width: 1200px;
+  height: 412px;
   background-image: url("../images/catalog/filter-background.jpeg");
   background-color: #333333;
+  color: #ffffff;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
+  margin: 0 auto;
 }
 
 .filter-header-title {
@@ -217,25 +262,26 @@ body {
 }
 
 .control {
-  /* font-weight: 400; - надо указывать или это наследует? */
+  font-weight: 400; /* лучше копировать */
   font-size: 18px;
   line-height: 23px;
-color: #FFFFFF;
+  color: #ffffff;
 }
 
-/* должны быть стили для галочек и для радиокнопок */
+/* здесь должны быть стили для галочек и для радиокнопок */
 
 .subscription-button {
   background: #82B3D3;
+  width: 232px;
+  height: 52px;
   font-weight: 700;
-  width: 191px;
-  height: 36px;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 20px;
+  line-height: 36px;
   text-align: center;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #ffffff;
   border: none;
+  border-radius: 0px 4px 4px 0px;
 }
 
 .button-reset {
@@ -249,8 +295,10 @@ color: #FFFFFF;
   color: #FFFFFF;
   background: none;
   border: none;
-  /* border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? Почему это не срабатывает?*/
 }
+
+/* .subscription-button - проверить класс!!!
+border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? Почему это не срабатывает?*/
 
 .search-results {
   font-size: 30px;
@@ -389,4 +437,4 @@ color: #FFFFFF;
 панели инструментов разработчика - это только чтобы посмотреть как будет если что-то изменить или прямо меняет сам код?
 */
 
-/*псевдокласс - для чего он нужен*/
+/*псевдокласс - для чего он нужен - поискать в документах академии*/
