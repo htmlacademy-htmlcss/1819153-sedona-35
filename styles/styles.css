@@ -12,7 +12,12 @@
   font-display: swap;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  margin: 0;
   font-family: "PT Sans", "Arial", sans-serif;
   font-weight: 400;
   /* какой здесь лучше размер указывать? */
@@ -20,22 +25,63 @@ body {
   line-height: 26px;
   color: #333333;
   background: #f2f2f2;
-  margin: 0%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.main-container {
+  flex-grow: 1;
+}
+
+/* Pages */
+
+.navigation {
+  display: flex;
+  width: 1200px;
+  /* ширина нужна здесь? */
+  margin: 0 70px;
+}
+
+.navigation-list {
+  width: 420px;
+  /* width: ; */
+  /* Это уже есть ниже
+  margin: 0;
+  padding: 0; */
+}
+
+.navigation-user {
+  max-width: 270px;
+  margin-left: auto;
 }
 
 .page-container {
   width: 1200px;
   background: #ffffff;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
+.logo-link {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: auto;
+}
 /* в любых селекторах нужно будет написать только особенности начертания*/
 
 
 .page-header {
   color: #000000;
+}
+
+.advantages {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  /* Здесь надо паддинг или нужны margin для текста? */
 }
 
 .navigation-list,
@@ -49,6 +95,36 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.advantages-list,
+.assortment-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.search-hotel {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 96px 304px;
+}
+
+.subscription {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.advantages-item-darkblue,
+.advantages-item-lightblue,
+.advantages-item-mediumblue {
+  width: 400px;
+
 }
 
 .navigation-link {
@@ -84,6 +160,8 @@ images/divider.svg*/
   color: #000000;
   background-repeat: no-repeat, no-repeat;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 .advantages-header,
@@ -171,12 +249,12 @@ images/divider.svg*/
   font-size: 30px;
   line-height: 36px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
 }
 
 .subscription-description {
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
 }
 
@@ -196,6 +274,18 @@ images/divider.svg*/
   color: rgba(0, 0, 0, 0.6);
 }
 
+.page-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 70px 30px 70px;
+}
+
+.social-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .footer-phone {
   text-align: center;
 }
@@ -208,8 +298,6 @@ images/divider.svg*/
   text-decoration: none;
   text-transform: capitalize;
 }
-
-
 
 .button-link {
   font-weight: 700;
@@ -266,6 +354,13 @@ images/divider.svg*/
   font-size: 18px;
   line-height: 23px;
   color: #ffffff;
+}
+
+.product-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 1200px;
 }
 
 /* здесь должны быть стили для галочек и для радиокнопок */
