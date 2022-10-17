@@ -1,6 +1,5 @@
 @font-face {
   font-family: "PT Sans";
-  font-style: normal;
   font-weight: 400;
   src: url("../fonts/ptsans-400.woff2") format("woff2");
   font-display: swap;
@@ -8,29 +7,76 @@
 
 @font-face {
   font-family: "PT Sans";
-  font-style: normal;
   font-weight: 700;
   src: url("../fonts/ptsans-700.woff2") format("woff2");
   font-display: swap;
 }
 
-/*надо italic подключать?*/
+html {
+  height: 100%;
+}
 
 body {
+  margin: 0;
   font-family: "PT Sans", "Arial", sans-serif;
-  font-style: normal;
   font-weight: 400;
   /* какой здесь лучше размер указывать? */
   font-size: 22px;
   line-height: 26px;
   color: #333333;
-  background: #FFFFFF;
+  background: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 
-/*.title - заменить класс{
-  font-weight: 700;
-  color: #000000;
-}*/
+.main-container {
+  flex-grow: 1;
+}
+
+/* Pages */
+
+.navigation {
+  display: flex;
+  position: relative;
+  padding-left: 238px;
+  padding-right: 54px;
+  justify-content: space-between;
+  /* ширина нужна здесь? */
+
+}
+
+.navigation-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* width: ; */
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.navigation-item {
+  padding: 18px 16px 20px;
+}
+
+.page-container {
+  width: 1200px;
+  background: #ffffff;
+  margin: 0 auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.logo-link {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: auto;
+  position: absolute;
+  left: 70px;
+    top: 0;
+  /* размер надо указывать? */
+}
 /* в любых селекторах нужно будет написать только особенности начертания*/
 
 
@@ -38,70 +84,141 @@ body {
   color: #000000;
 }
 
+.advantages {
+  padding-top: 68px;
+
+  /* Это не нужно
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center; */
+  /* Здесь надо паддинг или нужны margin для текста? */
+}
+
+.social-list-footer,
+.pagination-item,
+.breadcrumbs-item,
+.filter-catalog-item,
+.product-card {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+
+.advantages-container-image {
+  height: 100%;
+  width: 800px;
+  overflow: hidden;
+}
+
+.advantages-image {
+  height: 100%;
+  width: auto;
+}
+
+.search-hotel {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 95px;
+  padding-bottom: 110px;
+}
+
+.subscription {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 .navigation-link {
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   color: #000000;
-  background-color: #FFFFFF; /*зачем указывать background-color? у нас же в body указан уже background*/
+  /* background-color: #ffffff; зачем указывать background-color? у нас же в body указан уже background - смысла нет и убрать background-color */
   text-decoration: none;
   text-transform: capitalize;
-  text-align: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
 }
 
 .hero {
-  background-image: url("../images/hero-background.jpeg");
-  /* а размеры для бэкграунда где указывать? */
+  background-color: #4b4646;
+  /* определить цвет пипеткой */
+  background-image: url("../images/divider.svg"), url("../images/hero-background.jpeg");
+/* а размеры для бэкграунда где указывать?
+images/divider.svg*/
+  background-position: center bottom, center;
   color: #000000;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-repeat: no-repeat, no-repeat;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 79px;
 }
 
-/* как разместить картинку по центру? */
-.hero-image {
-  align-content: center;
-}
-
-.advantages-header,
-.question,
-.subscription-call-catalog {
+.advantages-header {
+  padding: 0;
+  margin: 0 auto;
+  width: 670px;
   font-size: 30px;
   font-weight: 700;
   line-height: 36px;
   color: #000000;
-  background: #FFFFFF; /*это надо или как?*/
   text-align: center;
   text-transform: uppercase;
 }
 
-.advantages-text,
-.text,
-.subscription-description-catalog {
-  text-align: center;
+.advantages-text {
+  padding: 0;
+  margin: 25px auto 90px;
+  /* margin: верх лево-право низ; */
+  width: 670px;
 }
 
-.advantages-item:nth-child(1),
-.advantages-item:nth-child(5) {
-  background: #82B3D3;
-
-  color: #FFFFFF;
+.advantages-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.advantages-item:nth-child(even),
-.assortment-item:nth-child(odd) {
-  background: rgba(131, 179, 211, 0.12);
-
-  color: #000000;
+.advantages-item {
+  display: flex;
+/* Временная зарезервированная высота */
+  height: 384px;
 }
 
-.advantages-item:nth-child(3) {
-  background: rgba(131, 179, 211, 0.2);
+.advantages-container {
+  width: 400px;
+  margin: 0;
+  padding-top: 92px;
+}
+/* Как здесь расположить по квадрату? */
 
-  color: #000000;
+.assortment-container {
+  width: 400px;
+  margin: 0;
+  padding-top: 92px;
 }
 
-.advantages-title,
-.assortment-title {
+.advantages-title {
+  width: 180px;
+  margin: 0 auto;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
@@ -109,51 +226,206 @@ body {
   text-align: center;
 }
 
-.advantages-item:nth-child(even) .advantages-description,
-.advantages-item:nth-child(3) .advantages-description,
-.assortment-description {
+.advantages-item-darkblue .advantages-description {
+  width: 240px;
+  margin: 0 auto;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+}
+/* Что нужно делать с размерами картинок? */
+
+.advantages-item-mediumblue .advantages-description {
+  width: 240px;
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
   color: #333333;
   text-align: center;
+  margin: 0 auto;
 }
 
-.advantages-item:nth-child(1) .advantages-description,
-.advantages-item:nth-child(5) .advantages-description {
+.advantages-item-lightblue .advantages-description {
+  width: 240px;
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
+  color: #333333;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.question {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+  color: #000000;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.subscription-call-catalog {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+  color: #000000;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.search-hotel-text {
+  text-align: center;
+  width: 650px;
+  margin-bottom: 70px;
+}
+
+.subscription-description-catalog {
   text-align: center;
 }
 
+.advantages-item-darkblue {
+  background: #82B3D3;
+  color: #ffffff;
+}
+
+.advantages-item-lightblue,
+.assortment-item-lightblue {
+  background: rgba(131, 179, 211, 0.12);
+  color: #000000;
+}
+
+.advantages-item-mediumblue {
+  background: rgba(131, 179, 211, 0.2);
+  color: #000000;
+}
+
+.assortment-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+.assortment-title {
+  width: 180px;
+  margin: 0 auto;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.assortment-item {
+  display: flex;
+  /* Временная зарезервированная высота */
+  height: 384px;
+}
+
+
+.assortment-title-nobg{
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #000000;
+}
+
+
+
+.assortment-description {
+  width: 240px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #333333;
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+.breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.filter-catalog-products {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-catalog-group {
+  display: flex;
+}
+
 .subscription {
+  width: 1200px;
+  height: 415px;
   background-image: url(../images/subscribe-background.jpeg);
  /* почему не работает картинка? */
   color: #000000;
   background-repeat: no-repeat;
   background-size: 100% auto;
+  border: 1px solid #000000;
+  background-position: top center;
+  text-align: center;
 }
 .subscription-call {
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
 }
 
 .subscription-description {
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
 }
 
-/*как сделать шрифт для Ваш email? и как отцентровать?*/
-.subscription-form {
-  align-items: center;
+.subscription-form-email {
+  width: 452px;
+  height: 52px;
+  font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-  color: aquamarine;
+  color: #000000;
+}
+
+.subscription-form-email::placeholder {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.page-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 70px 30px 70px;
+}
+
+.social-footer {
+  display: flex;
+}
+
+.social-list-footer {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 142px;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-wrap: wrap;
 }
 
 .footer-phone {
@@ -164,12 +436,10 @@ body {
   font-size: 40px;
   line-height: 40px;
   color: #000000;
-  background-color: #FFFFFF; /*зачем указывать background-color? у нас же в body указан уже background*/
+  background-color: #ffffff; /*зачем указывать background-color? у нас же в body указан уже background*/
   text-decoration: none;
   text-transform: capitalize;
 }
-
-
 
 .button-link {
   font-weight: 700;
@@ -184,25 +454,47 @@ body {
 }
 
 /* Каталог */
+
+.filter-catalog-group {
+  display: flex;
+  width: 150px;
+}
+
+.product-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  width: 340px;
+}
+
 .filter {
+  position: absolute;
+  width: 1200px;
+  height: 412px;
   background-image: url("../images/catalog/filter-background.jpeg");
   background-color: #333333;
+  color: #ffffff;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
+  margin: 0 auto;
 }
 
 .filter-header-title {
   font-weight: 700;
   font-size: 60px;
   line-height: 78px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .breadcrumbs-link {
   font-weight: 400;
   font-size: 16px;
   line-height: 21px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
   text-align: center;
   /* background-color: #000000; надо? */
@@ -213,29 +505,37 @@ body {
   font-size: 20px;
   line-height: 24px;
   text-align: left;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .control {
-  /* font-weight: 400; - надо указывать или это наследует? */
+  font-weight: 400; /* лучше копировать */
   font-size: 18px;
   line-height: 23px;
-color: #FFFFFF;
+  color: #ffffff;
 }
 
-/* должны быть стили для галочек и для радиокнопок */
+.product-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 1200px;
+}
+
+/* здесь должны быть стили для галочек и для радиокнопок */
 
 .subscription-button {
   background: #82B3D3;
+  width: 232px;
+  height: 52px;
   font-weight: 700;
-  width: 191px;
-  height: 36px;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 20px;
+  line-height: 36px;
   text-align: center;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #ffffff;
   border: none;
+  border-radius: 0px 4px 4px 0px;
 }
 
 .button-reset {
@@ -246,18 +546,20 @@ color: #FFFFFF;
   line-height: 20px;
   text-align: center;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #ffffff;
   background: none;
   border: none;
-  /* border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? Почему это не срабатывает?*/
 }
+
+/* .subscription-button - проверить класс!!!
+border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? Почему это не срабатывает?*/
 
 .search-results {
   font-size: 30px;
   font-weight: 700;
   line-height: 36px;
   color: #000000;
-  background: #FFFFFF; /*это надо или как?*/
+  background: #ffffff; /*это надо или как?*/
   text-align: left;
   text-transform: uppercase;
 }
@@ -287,7 +589,7 @@ color: #FFFFFF;
   font-size: 20px;
   line-height: 36px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -358,7 +660,7 @@ color: #FFFFFF;
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 /*надо повторять font-style?*/
@@ -389,4 +691,4 @@ color: #FFFFFF;
 панели инструментов разработчика - это только чтобы посмотреть как будет если что-то изменить или прямо меняет сам код?
 */
 
-/*псевдокласс - для чего он нужен*/
+/*псевдокласс - для чего он нужен - поискать в документах академии*/
