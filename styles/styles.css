@@ -38,22 +38,26 @@ body {
 
 .navigation {
   display: flex;
-  width: 1200px;
+  position: relative;
+  padding-left: 238px;
+  padding-right: 54px;
+  justify-content: space-between;
   /* ширина нужна здесь? */
-  margin: 0 70px;
+
 }
 
 .navigation-list {
-  width: 420px;
-  /* width: ; */
-  /* Это уже есть ниже
   margin: 0;
-  padding: 0; */
+  padding: 0;
+  list-style: none;
+  /* width: ; */
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
 }
 
-.navigation-user {
-  max-width: 270px;
-  margin-left: auto;
+.navigation-item {
+  padding: 18px 16px 20px;
 }
 
 .page-container {
@@ -68,6 +72,10 @@ body {
   margin-top: 0;
   margin-bottom: 0;
   margin-right: auto;
+  position: absolute;
+  left: 70px;
+    top: 0;
+  /* размер надо указывать? */
 }
 /* в любых селекторах нужно будет написать только особенности начертания*/
 
@@ -77,16 +85,16 @@ body {
 }
 
 .advantages {
+  padding-top: 68px;
+
+  /* Это не нужно
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
   /* Здесь надо паддинг или нужны margin для текста? */
 }
 
-.navigation-list,
-.advantages-list,
-.assortment-list,
 .social-list-footer,
 .pagination-item,
 .breadcrumbs-item,
@@ -97,12 +105,17 @@ body {
   list-style: none;
 }
 
-.advantages-list,
-.assortment-list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  flex-direction: row;
+
+
+.advantages-container-image {
+  height: 100%;
+  width: 800px;
+  overflow: hidden;
+}
+
+.advantages-image {
+  height: 100%;
+  width: auto;
 }
 
 .search-hotel {
@@ -120,12 +133,6 @@ body {
   align-items: center;
 }
 
-.advantages-item-darkblue,
-.advantages-item-lightblue,
-.advantages-item-mediumblue {
-  width: 400px;
-
-}
 
 .navigation-link {
   font-weight: 700;
@@ -149,10 +156,8 @@ body {
 }
 
 .hero {
-  width: 1200px;
-  height: 485px;
-  margin: 0 auto;
-  background-color: #f2f2f2;
+  background-color: #4b4646;
+  /* определить цвет пипеткой */
   background-image: url("../images/divider.svg"), url("../images/hero-background.jpeg");
 /* а размеры для бэкграунда где указывать?
 images/divider.svg*/
@@ -160,11 +165,96 @@ images/divider.svg*/
   color: #000000;
   background-repeat: no-repeat, no-repeat;
   text-align: center;
-  display: flex;
-  justify-content: space-between;
+  padding-top: 50px;
+  padding-bottom: 79px;
 }
 
-.advantages-header,
+.advantages-header {
+  padding: 0;
+  margin: 0 auto;
+  width: 670px;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+  color: #000000;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.advantages-text {
+  padding: 0;
+  margin: 25px auto 90px;
+  /* margin: верх лево-право низ; */
+  width: 670px;
+}
+
+.advantages-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.advantages-item {
+  display: flex;
+}
+
+.advantages-container {
+  width: 400px;
+  margin: 0;
+  padding-top: 92px;
+}
+/* Как здесь расположить по квадрату? */
+
+.assortment-container {
+  width: 400px;
+  margin: 0;
+  padding-top: 92px;
+}
+
+.advantages-title {
+  width: 180px;
+  margin: 0 auto;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.advantages-item-darkblue .advantages-description {
+  width: 240px;
+  margin: 0 auto;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+}
+/* Что нужно делать с размерами картинок? */
+
+.advantages-item-mediumblue .advantages-description {
+  width: 240px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #333333;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.advantages-item-lightblue .advantages-description {
+  width: 240px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #333333;
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+
 .question,
 .subscription-call-catalog {
   font-size: 30px;
@@ -175,11 +265,11 @@ images/divider.svg*/
   text-transform: uppercase;
 }
 
-.advantages-text,
 .text,
 .subscription-description-catalog {
   text-align: center;
 }
+
 
 .advantages-item-darkblue {
   background: #82B3D3;
@@ -197,14 +287,29 @@ images/divider.svg*/
   color: #000000;
 }
 
-.advantages-title,
+.assortment-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
 .assortment-title {
+  width: 180px;
+  margin: 0 auto;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
   text-transform: uppercase;
   text-align: center;
 }
+
+.assortment-item {
+  display: flex;
+}
+
 
 .assortment-title-nobg{
   font-weight: 700;
@@ -215,21 +320,33 @@ images/divider.svg*/
   color: #000000;
 }
 
-.advantages-item-lightblue .advantages-description,
-.advantages-item-mediumblue .advantages-description,
+
+
 .assortment-description {
+  width: 240px;
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
   color: #333333;
   text-align: center;
+  margin: 0 auto;
 }
 
-.advantages-item-darkblue .advantages-description {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
-  text-align: center;
+
+.breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.filter-catalog-products {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-catalog-group {
+  display: flex;
 }
 
 .subscription {
@@ -282,8 +399,17 @@ images/divider.svg*/
 
 .social-footer {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+}
+
+.social-list-footer {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 142px;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-wrap: wrap;
 }
 
 .footer-phone {
@@ -294,7 +420,7 @@ images/divider.svg*/
   font-size: 40px;
   line-height: 40px;
   color: #000000;
-  background-color: #FFFFFF; /*зачем указывать background-color? у нас же в body указан уже background*/
+  background-color: #ffffff; /*зачем указывать background-color? у нас же в body указан уже background*/
   text-decoration: none;
   text-transform: capitalize;
 }
@@ -312,6 +438,23 @@ images/divider.svg*/
 }
 
 /* Каталог */
+
+.filter-catalog-group {
+  display: flex;
+  width: 150px;
+}
+
+.product-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  width: 340px;
+}
+
 .filter {
   position: absolute;
   width: 1200px;
@@ -328,14 +471,14 @@ images/divider.svg*/
   font-weight: 700;
   font-size: 60px;
   line-height: 78px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .breadcrumbs-link {
   font-weight: 400;
   font-size: 16px;
   line-height: 21px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
   text-align: center;
   /* background-color: #000000; надо? */
@@ -346,7 +489,7 @@ images/divider.svg*/
   font-size: 20px;
   line-height: 24px;
   text-align: left;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .control {
@@ -387,7 +530,7 @@ images/divider.svg*/
   line-height: 20px;
   text-align: center;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #ffffff;
   background: none;
   border: none;
 }
@@ -400,7 +543,7 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   font-weight: 700;
   line-height: 36px;
   color: #000000;
-  background: #FFFFFF; /*это надо или как?*/
+  background: #ffffff; /*это надо или как?*/
   text-align: left;
   text-transform: uppercase;
 }
@@ -430,7 +573,7 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   font-size: 20px;
   line-height: 36px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -501,7 +644,7 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 /*надо повторять font-style?*/
