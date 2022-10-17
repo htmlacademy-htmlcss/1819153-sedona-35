@@ -123,7 +123,8 @@ body {
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  padding: 96px 304px;
+  padding-top: 95px;
+  padding-bottom: 110px;
 }
 
 .subscription {
@@ -198,6 +199,8 @@ images/divider.svg*/
 
 .advantages-item {
   display: flex;
+/* Временная зарезервированная высота */
+  height: 384px;
 }
 
 .advantages-container {
@@ -253,9 +256,16 @@ images/divider.svg*/
   margin: 0 auto;
 }
 
+.question {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+  color: #000000;
+  text-align: center;
+  text-transform: uppercase;
+}
 
-
-.question,
 .subscription-call-catalog {
   font-size: 30px;
   font-weight: 700;
@@ -265,11 +275,15 @@ images/divider.svg*/
   text-transform: uppercase;
 }
 
-.text,
+.search-hotel-text {
+  text-align: center;
+  width: 650px;
+  margin-bottom: 70px;
+}
+
 .subscription-description-catalog {
   text-align: center;
 }
-
 
 .advantages-item-darkblue {
   background: #82B3D3;
@@ -308,6 +322,8 @@ images/divider.svg*/
 
 .assortment-item {
   display: flex;
+  /* Временная зарезервированная высота */
+  height: 384px;
 }
 
 
