@@ -18,6 +18,8 @@ html {
 
 body {
   margin: 0;
+  display: flex;
+  flex-direction: column;
   font-family: "PT Sans", "Arial", sans-serif;
   font-weight: 400;
   /* какой здесь лучше размер указывать? */
@@ -25,8 +27,8 @@ body {
   line-height: 26px;
   color: #333333;
   background: #f2f2f2;
-  display: flex;
-  flex-direction: column;
+
+
   min-height: 100%;
 }
 
@@ -41,7 +43,7 @@ body {
   position: relative;
   padding-left: 238px;
   padding-right: 54px;
-  justify-content: space-between;
+  margin: 0 auto;
   /* ширина нужна здесь? */
 
 }
@@ -49,8 +51,19 @@ body {
 .navigation-list {
   margin: 0;
   padding: 0;
-  list-style: none;
-  /* width: ; */
+  list-style-type: none;
+  width: 450px;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.navigation-user {
+  /* margin-left: auto; */
+  margin: 0 0 0 auto;
+  padding: 0;
+  max-width: 330px;
+  list-style-type: none;
   display: flex;
   justify-content: start;
   flex-wrap: wrap;
@@ -58,6 +71,36 @@ body {
 
 .navigation-item {
   padding: 18px 16px 20px;
+}
+
+.navigation-user-item {
+  padding: 14px 16px 14px;
+}
+
+.navigation-link {
+  display: block;
+  /* верхняя строчка нужна? */
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+  /* background-color: #ffffff; зачем указывать background-color? у нас же в body указан уже background - смысла нет и убрать background-color */
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.button-link {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  background: #756157;
+  border-radius: 4px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 34px;
 }
 
 .page-container {
@@ -74,7 +117,7 @@ body {
   margin-right: auto;
   position: absolute;
   left: 70px;
-    top: 0;
+  top: 0;
   /* размер надо указывать? */
 }
 /* в любых селекторах нужно будет написать только особенности начертания*/
@@ -96,54 +139,25 @@ body {
 }
 
 .social-list-footer,
-.pagination-item,
 .breadcrumbs-item,
-.filter-catalog-item,
-.product-card {
+.filter-catalog-item {
   margin: 0;
   padding: 0;
-  list-style: none;
+  list-style-type: none;
 }
 
 
 
-.advantages-container-image {
-  height: 100%;
-  width: 800px;
-  overflow: hidden;
-}
 
-.advantages-image {
-  height: 100%;
-  width: auto;
-}
 
-.search-hotel {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 95px;
-  padding-bottom: 110px;
-}
+
 
 .subscription {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
+
 }
 
 
-.navigation-link {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-  color: #000000;
-  /* background-color: #ffffff; зачем указывать background-color? у нас же в body указан уже background - смысла нет и убрать background-color */
-  text-decoration: none;
-  text-transform: capitalize;
-}
+
 
 .visually-hidden {
   position: absolute;
@@ -164,10 +178,22 @@ body {
 images/divider.svg*/
   background-position: center bottom, center;
   color: #000000;
+  background-size: auto auto, cover;
   background-repeat: no-repeat, no-repeat;
   text-align: center;
   padding-top: 50px;
   padding-bottom: 79px;
+}
+
+.advantages-container-image {
+  height: 100%;
+  width: 800px;
+  overflow: hidden;
+}
+
+.advantages-image {
+  height: 100%;
+  width: auto;
 }
 
 .advantages-header {
@@ -206,19 +232,19 @@ images/divider.svg*/
 .advantages-container {
   width: 400px;
   margin: 0;
-  padding-top: 92px;
+  /* padding-top: 92px; */
 }
 /* Как здесь расположить по квадрату? */
 
 .assortment-container {
   width: 400px;
   margin: 0;
-  padding-top: 92px;
+  /* padding-top: 92px; */
 }
 
 .advantages-title {
-  width: 180px;
-  margin: 0 auto;
+  width: 172px;
+  margin: 92px auto 62px;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
@@ -256,8 +282,17 @@ images/divider.svg*/
   margin: 0 auto;
 }
 
+
+
+
+.search-hotel {
+  text-align: center;
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
 .question {
-  margin: 0;
+  margin: 0 0 20px;
   font-size: 30px;
   font-weight: 700;
   line-height: 36px;
@@ -278,7 +313,7 @@ images/divider.svg*/
 .search-hotel-text {
   text-align: center;
   width: 650px;
-  margin-bottom: 70px;
+  margin: 0 auto 54px;
 }
 
 .subscription-description-catalog {
@@ -311,8 +346,8 @@ images/divider.svg*/
 
 
 .assortment-title {
-  width: 180px;
-  margin: 0 auto;
+  width: 172px;
+  margin: 182px auto 30px;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
@@ -334,12 +369,14 @@ images/divider.svg*/
   text-transform: uppercase;
   text-align: center;
   color: #000000;
+  width: 172px;
+  margin: 182px auto 30px;
 }
 
 
 
 .assortment-description {
-  width: 240px;
+  width: 230px;
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
@@ -348,21 +385,37 @@ images/divider.svg*/
   margin: 0 auto;
 }
 
+.filter {
+
+  background-image: url("../images/catalog/filter-background.jpeg");
+  background-color: #333333;
+  color: #ffffff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto 50px;
+}
+
+.filter-header-title {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 78px;
+  color: #ffffff;
+  margin: 0;
+  padding: 35px 70px 0;
+}
 
 .breadcrumbs {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
+  justify-content: start;
+  gap: 10px;
+  padding: 4px 70px 41px;
+  margin: 0;
 }
 
 .filter-catalog-products {
   display: flex;
-  justify-content: space-between;
-}
-
-.filter-catalog-group {
-  display: flex;
+  width: 1060px;
+  margin: 0 auto;
 }
 
 .subscription {
@@ -384,20 +437,34 @@ images/divider.svg*/
   text-transform: uppercase;
   color: #ffffff;
   text-align: center;
+  margin: 95px auto 20px;
 }
 
 .subscription-description {
   color: #ffffff;
   text-align: center;
+  width: 500px;
+  margin: 0 auto 55px;
+}
+
+.subscription-form {
+  display: flex;
+  justify-content: center;
 }
 
 .subscription-form-email {
   width: 452px;
   height: 52px;
+
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
   color: #000000;
+  margin: 0;
+  padding: 0;
+  background: #F2F2F2;
+  border-radius: 4px 0px 0px 4px;
+  border: none;
 }
 
 .subscription-form-email::placeholder {
@@ -405,22 +472,33 @@ images/divider.svg*/
   font-size: 18px;
   line-height: 24px;
   color: rgba(0, 0, 0, 0.6);
+  padding-left: 20px;
 }
 
 .page-footer {
+
+}
+
+.social-footer-container {
   display: flex;
   justify-content: space-between;
   padding: 40px 70px 30px 70px;
 }
 
 .social-footer {
-  display: flex;
+  max-width: 150px;
+  padding-top: 10px;
+}
+
+
+.footer-logo {
+  padding-top: 6px;
 }
 
 .social-list-footer {
   margin: 0;
   padding: 0;
-  list-style: none;
+  list-style-type: none;
   width: 142px;
   display: flex;
   justify-content: space-around;
@@ -430,6 +508,7 @@ images/divider.svg*/
 
 .footer-phone {
   text-align: center;
+  padding-top: 4px;
 }
 .contacts-phone{
   font-weight: 400;
@@ -441,16 +520,21 @@ images/divider.svg*/
   text-transform: capitalize;
 }
 
-.button-link {
+
+
+.button-link-search {
   font-weight: 700;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 20px;
+  line-height: 36px;
   color: #ffffff;
   background: #756157;
   border-radius: 4px;
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
+  display: inline-block;
+  padding: 7px 50px 9px;
+  max-width: 600px;
 }
 
 /* Каталог */
@@ -460,33 +544,40 @@ images/divider.svg*/
   width: 150px;
 }
 
+.filter-catalog-group-infrastructure  {
+  display: flex;
+  width: 150px;
+}
+
 .product-list {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 17px;
   flex-wrap: wrap;
 }
 
 .product-card {
   width: 340px;
+  border: 1px solid #E6E6E6;
+  border-radius: 4px;
 }
 
-.filter {
-  position: absolute;
-  width: 1200px;
-  height: 412px;
-  background-image: url("../images/catalog/filter-background.jpeg");
-  background-color: #333333;
-  color: #ffffff;
-  background-repeat: no-repeat;
-  background-size: cover;
+.filter-catalog {
+  display: flex;
+}
+
+.filter-results {
+  display: flex;
+  width: 1060px;
   margin: 0 auto;
+  /* padding: 16px; */
 }
 
-.filter-header-title {
+.filter-catalog-title {
   font-weight: 700;
-  font-size: 60px;
-  line-height: 78px;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: left;
   color: #ffffff;
 }
 
@@ -500,13 +591,7 @@ images/divider.svg*/
   /* background-color: #000000; надо? */
 }
 
-.filter-catalog-title {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-  text-align: left;
-  color: #ffffff;
-}
+
 
 .control {
   font-weight: 400; /* лучше копировать */
@@ -515,11 +600,19 @@ images/divider.svg*/
   color: #ffffff;
 }
 
+.product {
+  display: flex;
+  width: 1060px;
+  margin: 0 auto;
+}
+
 .product-list {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 1200px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* здесь должны быть стили для галочек и для радиокнопок */
@@ -536,6 +629,8 @@ images/divider.svg*/
   color: #ffffff;
   border: none;
   border-radius: 0px 4px 4px 0px;
+  margin: 0;
+  padding: 0;
 }
 
 .button-reset {
@@ -562,6 +657,23 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   background: #ffffff; /*это надо или как?*/
   text-align: left;
   text-transform: uppercase;
+  width: 400px;
+
+  margin: 0;
+}
+
+.sorting-container {
+  display: flex;
+  margin-bottom: 40px;
+  color: #333333;
+  background-color: #d11b1b;
+
+  /*
+    width: 292px;
+    margin: 0;
+    padding: 0 20px;
+    height: 49px; */
+
 }
 
 .select-control {
@@ -572,17 +684,44 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   text-align: left;
 }
 
-.pagination-link-current {
-  background: #F2F2F2;
-  border-radius: 4px;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 36px;
-  text-align: center;
-  color: #000000;
+/* .select-control {
+  display: flex;
+  justify-content: space-between;
+  width: 160px;
+  margin-left: auto;
+  margin-bottom: 16px;
+
+} */
+
+/* Кнопки сортировки */
+.sorting-container .button-sorting {
+  width: 48px;
+  height: 48px;
+}
+
+/* Нумерация страниц поиска */
+.pagination-section {
+  width: 1060px;
+  margin: 0 auto;
+}
+
+.pagination {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.pagination-item:not(:last-child) {
+  margin-right: 8px;
 }
 
 .pagination-link {
+  display: block;
+  box-sizing: border-box;
+  width: 60px;
+  height: 60px;
+  padding-top: 12px;
   background: #82B3D3;
   border-radius: 4px;
   font-weight: 700;
@@ -593,14 +732,20 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   text-decoration: none;
 }
 
-.pagination-link-dots {
-  border-radius: 4px;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 26px;
-  text-align: center;
-  text-decoration: none;
+/* Текущий номер страницы */
+.pagination-clear {
+  background-color: transparent;
+}
+
+.pagination-current {
   color: #000000;
+  background-color: #f2f2f2;
+}
+
+/* Точки */
+.pagination-disabled {
+  color: #000000;
+  background-color: #ffffff;
 }
 
 .product-card-title {
