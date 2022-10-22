@@ -225,16 +225,21 @@ images/divider.svg*/
 
 .advantages-item {
   display: flex;
-/* Временная зарезервированная высота */
-  height: 384px;
 }
 
 .advantages-container {
   width: 400px;
-  margin: 0;
-  /* padding-top: 92px; */
+  margin: 0 auto;
+  padding-top: 103px;
+  padding-bottom: 10px;
+  /* Временная зарезервированная высота */
+  min-height: 384px;
+  box-sizing: border-box;
 }
-/* Как здесь расположить по квадрату? */
+
+.advantages-item-darkblue .advantages-container{
+  padding-top: 92px;
+}
 
 .assortment-container {
   width: 400px;
@@ -244,7 +249,7 @@ images/divider.svg*/
 
 .advantages-title {
   width: 172px;
-  margin: 92px auto 62px;
+  margin: 0 auto 62px;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
@@ -392,7 +397,8 @@ images/divider.svg*/
   color: #ffffff;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 0 auto 50px;
+  margin: 0 auto 57px;
+  padding-bottom: 32px;
 }
 
 .filter-header-title {
