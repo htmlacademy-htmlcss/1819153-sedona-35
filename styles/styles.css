@@ -194,6 +194,7 @@ images/divider.svg*/
 .advantages-image {
   height: 100%;
   width: auto;
+  display: block;
 }
 
 .advantages-header {
@@ -213,6 +214,7 @@ images/divider.svg*/
   margin: 25px auto 90px;
   /* margin: верх лево-право низ; */
   width: 670px;
+  text-align: center;
 }
 
 .advantages-list {
@@ -555,19 +557,6 @@ images/divider.svg*/
   width: 150px;
 }
 
-.product-list {
-  display: flex;
-  justify-content: space-between;
-  gap: 17px;
-  flex-wrap: wrap;
-}
-
-.product-card {
-  width: 340px;
-  border: 1px solid #E6E6E6;
-  border-radius: 4px;
-}
-
 .filter-catalog {
   display: flex;
 }
@@ -606,20 +595,7 @@ images/divider.svg*/
   color: #ffffff;
 }
 
-.product {
-  display: flex;
-  width: 1060px;
-  margin: 0 auto;
-}
 
-.product-list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
 
 /* здесь должны быть стили для галочек и для радиокнопок */
 
@@ -754,12 +730,72 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   background-color: #ffffff;
 }
 
+/* Карточки отелей-продуктов */
+.product {
+  display: flex;
+  width: 1060px;
+  margin: 0 auto;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(3, 340px);
+  gap: 20px;
+  list-style-type: none;
+  margin: 0;
+  margin-bottom: 40px;
+  padding: 0;
+}
+
+
+
+/* .product-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0 0 20px;
+  padding: 0;
+} */
+
+.product-card {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.product-card-content {
+  display: grid;
+  grid-template-columns: 140px  140px;
+  gap: 16px 20px;
+}
+
+
+/* .product-card {
+  width: 340px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  border: 1px solid #E6E6E6;
+  border-radius: 4px;
+  background-color: #ffffff;
+} */
+
+.product-card:nth-child(3n) {
+  margin-right: 0;
+}
+
 .product-card-title {
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
   color: #000000;
   text-align: left;
+  list-style-type: none;
+  grid-column: 1 / -1;
+  margin: 0;
 }
 
 .product-card-type {
@@ -768,43 +804,76 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   line-height: 21px;
   color: #333333;
   text-align: left;
+  margin: 0;
 }
 
-.price {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
-  color: #333333;
-  text-align: right;
+.product-card-image-link {
+  text-decoration: none;
 }
 
-.raiting {
-  background: #F2F2F2;
-  border-radius: 4px;
+.product-card-image {
+  display: block;
 }
+
 
 .product-card-button {
   background: #756157;
   border-radius: 4px;
   align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 8px 0;
 }
 
-.product-card-button-favorite,
-.button {
+.product-card-button-favorite {
   background: #82B3D3;
   border-radius: 4px;
-  border: none;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 8px 0;
 }
 
 .product-card-button-selected {
   background: #7DB54F;
-  buttonborder-radius: 4px;
+  border-radius: 4px;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 8px 0;
 }
 
-.product-card-button-favorite,
-.product-card-button,
-.product-card-button-selected,
+.raiting {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  background: #F2F2F2;
+  border-radius: 4px;
+  grid-column: 2 / -1;
+  margin: 0;
+  padding: 8px 0;
+  text-align: center;
+}
+
 .button {
+  background: #82B3D3;
+  border-radius: 4px;
+  border: none;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
@@ -813,6 +882,32 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   text-decoration: none;
   color: #ffffff;
 }
+
+/* .product-card-button-favorite {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  background: #82B3D3;
+  border-radius: 4px;
+  border: none;
+} */
+
+
+
+.price {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #333333;
+  text-align: right;
+  margin: 0;
+}
+
+
 
 /*надо повторять font-style?*/
 /*что значит схловываются внешние вертикальные отступы?
