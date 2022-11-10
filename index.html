@@ -8,12 +8,13 @@
   </head>
 
   <body>
+    <h2 class="visually-hidden">HTML Academy: Проект Седона</h2>
     <div class="page-container">
 
       <!-- Шапка -->
       <header class="page-header" data-test="header">
         <nav class="navigation">
-
+          <h2 class="visually-hidden">Навигация по сайту</h2>
           <a class="logo-link">
             <img class="logo-image" src="images/logo-sedona.svg" alt="Логотип Седона" width="140" height="70">
           </a>
@@ -255,8 +256,9 @@
               <div class="field-group">
                 <label class="label-title" for="arrival-date">Дата заезда:</label>
                 <div class="field-container">
-                  <input class="booking-form-field field arrival-departure-field" type="text" id="arrival-date"
+                  <input class="arrival-departure-field" type="text" id="arrival-date"
                     name="arrival-date" placeholder="27 апреля 2020">
+                  <img class="calendar" src="images/calendar.svg" alt="Календарь" width="17" height="17">
                   <span class="error">Мы не можем отправить вас в прошлое.</span>
                 </div>
               </div>
@@ -264,9 +266,10 @@
               <div class="field-group">
                 <label class="label-title" for="departure-date">Дата выезда:</label>
                 <div class="field-container">
-                  <input class="booking-form-field field arrival-departure-field" type="text" id="departure-date"
+                  <input class="arrival-departure-field" type="text" id="departure-date"
                     name="departure-date" placeholder="1 сентября 2023">
-                  <span class="notification">На эти даты есть свободные номера. Пока есть.</span>
+                    <img class="calendar" src="images/calendar.svg" alt="Календарь" width="17" height="17">
+                    <span class="notification">На эти даты есть свободные номера. Пока есть.</span>
                 </div>
               </div>
 
@@ -275,7 +278,11 @@
                   <label class="label-title" for="adults">Взрослые:</label>
                   <div class="amount">
                     <!-- <div class="minus-plus-button"> -->
-                    <button class="adults-minus" aria-label="Уменьшить количество взрослых на единицу"></button>
+                    <button class="adults-minus" aria-label="Уменьшить количество взрослых на единицу">
+                      <svg class="adults-minus-svg" width="14" height="2" viewBox="0 0 14 2"  xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0L0 2L14 2V0L0 0Z" />
+                      </svg>
+                    </button>
                     <!-- </div> -->
                     <input class="booking-form-field field number-field" type="text" id="adults" name="adults"
                       placeholder="2">
@@ -314,6 +321,7 @@
         </div>
 
       </div>
+    </div>
   </body>
 
 </html>

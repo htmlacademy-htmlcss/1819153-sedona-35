@@ -12,8 +12,9 @@
 
       <!-- Шапка -->
       <header class="page-header" data-test="header">
+        <h2 class="visually-hidden">Поиск гостиниц в городе Седона</h2>
         <nav class="navigation">
-
+          <h2 class="visually-hidden">Навигация по каталогу</h2>
           <a class="logo-link">
             <img class="logo-image" src="images/logo-sedona.svg" alt="Логотип Седона" width="140" height="70">
           </a>
@@ -64,6 +65,7 @@
 
       <main class="main-container catalog-page">
         <section class="filter">
+          <h2 class="visually-hidden">Фильтры для поиска гостиниц в Седоне</h2>
           <section class="filter-header">
             <h1 class="filter-header-title">Гостиницы Седоны</h1>
 
@@ -201,12 +203,13 @@
 
         <!--Сортировка-->
         <section class="filter-results" data-test="search">
+          <h2 class="visually-hidden">Результаты поиска гостиниц в Седоне</h2>
           <p class="search-results">Найдено гостиниц: <span>38</span></p>
 
           <!--В каком случае для select нужно задавать атрибуты name и id? id нужен если связывать с label, name для формы-->
           <div class="sorting-container">
             <div class="select sorting-type">
-              <select class="select-control" aria-label="Сортировка">
+              <select class="select-control" aria-label="Сортировка" >
                 <!-- disabled -->
                 <option value="cheap">Сначала дешевые</option>
                 <option value="popular">Сначала популярные</option>
@@ -239,6 +242,7 @@
         </section>
 
         <section class="product" data-test="catalog">
+          <h2 class="visually-hidden">Карточки гостиниц в Седоне</h2>
           <!--Разметим карточки товаров.-->
           <ul class="product-list">
 
@@ -330,6 +334,7 @@
     Нужна здесь предыдущая страницы и следующая?
 -->
         <section class="pagination-section">
+          <h2 class="visually-hidden">Номера страниц поиска</h2>
           <ul class="pagination">
 
             <li class="pagination-item">
