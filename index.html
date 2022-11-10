@@ -285,8 +285,18 @@
 
 
                 <div class="field-group kids">
-                  <label class="label-title" for="kids">Дети:</label>
-                  <img class="info" src="images/info.svg" alt="Логотип инфо" width="26" height="26">
+                  <span class="form-label form-label-icon">
+                    <label class="label-title" for="kids">Дети:</label>
+                    <span class="tooltip">
+                      <button class="tooltip-toggle" aria-labelledby="tooltip-label-date" type="button" aria-label="Показать дополнительную инфо">
+                        <svg class="tooltip-icon" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7H14V9H12V7ZM14 19H12V10H14V19Z" fill="white"/>
+                        </svg>
+                      </button>
+                      <span class="tooltip-text" role="tooltip" id="tooltip-label-date">Укажите количество детей, которые&nbsp;будут с вами, возраст которых от 6 до 18 лет. Дети до&nbsp;6&nbsp;лет
+                      размещаются бесплатно.</span>
+                    </span>
+                  </span>
                   <div class="amount">
                     <!-- <div class="minus-plus-button"> -->
                     <button class="kids-minus" aria-label="Уменьшить количество взрослых на единицу"></button>
@@ -296,20 +306,7 @@
                     <button class="kids-plus" aria-label="Увеличить количество взрослых на единицу"></button>
                   </div>
                 </div>
-                <!-- <div class="field-group kids">
-                  <div class="amount">
-                    <label class="label-title" for="kids">Дети:</label>
-                    <button class="kids-minus" aria-label="Уменьшить количество детей на единицу"></button>
-                    <input class="booking-form-field field number-field" type="text" id="kids" name="kids"
-                      placeholder="2">
-                      <button class="kids-plus" aria-label="Увеличить количество детей на единицу"></button>
-                  </div>
-                </div> -->
               </div>
-
-              <!-- i -->
-              <!-- Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно. -->
-
               <button class="booking-form-button-submit button-blue" type="submit">Найти</button>
 
             </form>
