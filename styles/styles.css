@@ -700,6 +700,7 @@ images/divider.svg*/
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+  padding-top: 9px;
 }
 
 
@@ -713,14 +714,12 @@ images/divider.svg*/
   fill: #83B3D3;
 }
 
-.footer-social-link:hover .social-svg {
-  fill: #68a2ca;
+.footer-social-link:focus {
   outline: none;
 }
 
 .footer-social-link:focus .social-svg {
   fill: #68a2ca;
-  outline: none;
 }
 
 .footer-social-link:active .social-svg {
@@ -766,6 +765,7 @@ images/divider.svg*/
 
 .contacts-phone:focus {
   color: #756157;
+  outline: none;
 }
 
 .contacts-phone:active {
