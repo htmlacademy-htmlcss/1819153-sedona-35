@@ -1779,9 +1779,10 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   background-color: rgba(242, 242, 242, 0.8);
 }
 
-/* .modal-container-close {
+/* закомментировать, если надо открыть модальное окно */
+.modal-container-close {
   display: none;
-} */
+}
 
 .modal {
   position: relative;
@@ -1813,7 +1814,25 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   background-repeat: no-repeat;
   background-position: center center;
   cursor: pointer;
+  box-sizing: border-box;
 }
+
+.modal-close-button:hover {
+  background-color: #e6e6e6;
+}
+
+.modal-close-button:focus {
+  background-color: #e6e6e6;
+  border: 3px rgba(131, 179, 211, 1) solid;
+  outline: none;
+}
+
+.modal-close-button:active {
+  background-color: #e6e6e6;
+  opacity: 0.3;
+  border: none;
+}
+
 
 .modal-title {
   margin-top: 0;
@@ -1867,10 +1886,6 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   margin-bottom: 22px;
 }
 
-.arrival-departure-field {
-  width: 440px;
-}
-
 .number-field {
   width: 110px;
   padding: 0 35px;
@@ -1898,6 +1913,7 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
 
 .field-container {
   width: 440px;
+  position: relative;
 }
 
 .form-label-icon {
@@ -1928,6 +1944,13 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   font-weight: 700;
   font-size: 18px;
   color: #000000;
+}
+
+.calendar {
+  position: absolute;
+  top: 14px;
+  right: 22px;
+  opacity: 0.3;
 }
 
 .adults-kids {
@@ -2032,6 +2055,7 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
 .tooltip-text:after {
   content: '';
   background-image: url("../images/tooltip-arrow.svg");
+  background-repeat: no-repeat;
   width: 19px;
   height: 9px;
   position: absolute;
@@ -2043,7 +2067,39 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
 }
 
 .arrival-departure-field {
+  width: 440px;
   padding: 12px 20px;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 4px;
+  height: 48px;
+  box-sizing: border-box;
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #000000;
+}
+
+.arrival-departure-field:hover {
+  background: #e6e6e6;
+  cursor: pointer;
+  color: red;
+}
+
+/* .arrival-departure-field:hover .arrival-departure-field::placeholder {
+  color: red;
+  opacity: 0.6;
+} */
+
+.arrival-departure-field:focus {
+  cursor: text;
+  outline: rgba(131, 179, 211, 1) solid 3px;
+}
+
+.arrival-departure-field:active {
+  background: #f2f2f2;
+  border: 2px solid #000000;
+  outline: none;
 }
 
 .arrival-departure-field::placeholder {
@@ -2066,23 +2122,31 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
 
 .adults-minus {
   position: absolute;
-  width: 15px;
-  height: 16px;
-  top: 15px;
-  left: 12px;
-  background-image: url(../images/minus.svg);
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  top: 9px;
+  left: 6px;
+  /* background-image: url(../images/minus.svg); */
   background-repeat: no-repeat;
   background-position: center center;
-  /* fill: rgba(117, 97, 87, 0.3); */
   background-color: transparent;
-  /* fill: red; */
+  fill: rgba(117, 97, 87, 0.3);
   border: none;
   cursor: pointer;
+  content: "";
+  padding: 0;
+}
+
+.adults-minus-svg {
+  top: 0;
+  left: 0;
 }
 
 .adults-minus:hover  {
-  background: #000000;
+  /* background: #000000; */
   fill: red;
+
 }
 
 .adults-minus:focus {
@@ -2090,6 +2154,10 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   border-radius: 4px;
   width: 20px;
   height: 20px;
+}
+
+.adults-minus:active {
+  fill: green;
 }
 
 .adults-plus {
