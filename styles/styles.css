@@ -215,12 +215,15 @@ body {
   display: none;
 }
 
+
+
 .breadcrumbs-item:hover {
   color: rgba(255, 255, 255, 0.6);
 }
 
 .breadcrumbs-item:focus {
-  color: rgba(255, 255, 255, 0.6);
+  color: #ffffff;
+  outline: none;
 }
 
 .breadcrumbs-item:active {
@@ -700,7 +703,16 @@ images/divider.svg*/
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
-  padding-top: 9px;
+  padding-top: 2px;
+}
+
+.footer-social-link-catalog {
+  display: block;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  padding-top: 6px;
 }
 
 
@@ -732,6 +744,24 @@ images/divider.svg*/
   outline: none;
 }
 
+.footer-social-link-catalog:hover .social-svg {
+  fill: #68a2ca;
+  outline: none;
+}
+
+.footer-social-link-catalog:focus {
+  outline: none;
+}
+
+.footer-social-link-catalog:focus .social-svg {
+  fill: #68a2ca;
+}
+
+.footer-social-link-catalog:active .social-svg {
+  fill: rgba(104, 162, 202, 0.3);
+  outline: none;
+}
+
 .footer-phone {
   text-align: center;
   padding-right: 13px;
@@ -757,11 +787,31 @@ images/divider.svg*/
 }
 
 .breadcrumbs-link-home-svg {
-  fill: red;
+  fill: #ffffff;
 }
 
+/* .breadcrumbs-link-home:hover .breadcrumbs-link-home-svg {
+  fill: rgba(255, 255, 255, 0.6);
+}
+
+.breadcrumbs-link-home-svg:focus {
+  fill: #ffffff;
+} */
+
 .breadcrumbs-link-home:hover .breadcrumbs-link-home-svg {
-  fill: green;
+  fill: rgba(255, 255, 255, 0.6);
+}
+
+.breadcrumbs-link-home:focus {
+  outline: none;
+}
+
+.breadcrumbs-link-home:focus .breadcrumbs-link-home-svg {
+  fill: #ffffff;
+}
+
+.breadcrumbs-link-home:active .breadcrumbs-link-home-svg {
+  fill: rgba(255, 255, 255, 0.3);
 }
 
 .contacts-phone:hover {
@@ -952,6 +1002,12 @@ images/divider.svg*/
   background-color: #f2f2f2;
   border: none;
   appearance: textfield;
+}
+
+.range-input::-webkit-outer-spin-button,
+.range-input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
 }
 
 .catalog-filter-label {
@@ -1785,9 +1841,9 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
 }
 
 /* закомментировать, если надо открыть модальное окно */
-/* .modal-container-close {
+.modal-container-close {
   display: none;
-} */
+}
 
 .modal {
   position: relative;
@@ -1892,8 +1948,18 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
 }
 
 .number-field {
+  /* position: absolute; */
   width: 110px;
   padding: 0 35px;
+  /* z-index: 90; */
+  /* top: 0;
+  left: 0; */
+}
+
+.number-field::-webkit-outer-spin-button,
+.number-field::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
 }
 
 .booking-form-button-submit {
@@ -1909,7 +1975,7 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   background: #82B3D3;
   border-radius: 10px;
   border: none;
-  margin-top: 25px;
+  margin-top: 37px;
   margin-bottom: 32px;
   padding: 18px 255px;
   cursor: pointer;
@@ -2009,12 +2075,14 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   margin-left: 2px;
   width: 26px;
   height: 26px;
+  top: 6px;
+  left: 57px;
 }
 
 .tooltip-toggle {
   position: absolute;
-  top: -30px;
-  left: 57px;
+  top: 0;
+  left: 0;
   border: none;
   background-color: transparent;
   padding: 0;
@@ -2038,8 +2106,19 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   background-color: #AF7842;
 } */
 
+.tooltip-text-container {
+  position: absolute;
+  top: 26px;
+  padding-top: 15px;
+  /* margin-bottom: 0; */
+  left: 12px;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: none;
+}
+
 .tooltip-text {
-  /* display: block; */
+  display: block;
   width: 256px;
   background: #333333;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
@@ -2051,18 +2130,15 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   font-size: 16px;
   line-height: 20px;
   color: #ffffff;
-  position: absolute;
-  top: 11px;
-  margin-bottom: 0;
   box-sizing: border-box;
-  left: 70px;
-  transform: translateX(-50%);
-  z-index: 1;
-  display: none;
 }
 
-.tooltip-toggle:hover + .tooltip-text,
-.tooltip-toggle:focus + .tooltip-text {
+.tooltip-toggle:hover + .tooltip-text-container,
+.tooltip-toggle:focus + .tooltip-text-container {
+  display: block;
+}
+
+.tooltip:hover .tooltip-text-container {
   display: block;
 }
 
@@ -2073,7 +2149,7 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   width: 19px;
   height: 9px;
   position: absolute;
-  top: -6%;
+  top: 4%;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -2104,7 +2180,8 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
 .arrival-departure-field:hover {
   background: #e6e6e6;
   cursor: pointer;
-  color: red;
+  color: rgba(0, 0, 0, 0.6);
+  /* color: red; */
 }
 
 /* .arrival-departure-field:hover .arrival-departure-field::placeholder {
@@ -2125,7 +2202,7 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
 
 .arrival-departure-field::placeholder {
   line-height: 24px;
-  color: #000000;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .amount-wrapper {
@@ -2136,9 +2213,9 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
 .amount-controls {
   position: absolute;
   width: 100%;
-  top: 50%;
+  top: 66%;
   transform: translateY(-50%);
-  padding: 0 10px;
+  padding: 0;
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
@@ -2156,7 +2233,17 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   align-items: center;
   background-position: center;
   background-repeat: no-repeat;
+  position: absolute;
+}
 
+.minus {
+  top: 13px;
+  left: 9px;
+}
+
+.plus {
+  top: 13px;
+  right: 10px;
 }
 
 .amount-button-svg {

@@ -242,7 +242,7 @@
       </footer>
 
 
-
+<!-- Строка 1802 CSS -->
       <div class="modal-container modal-container-close">
         <div class="modal modal-booking">
           <button class="modal-close-button">
@@ -277,16 +277,16 @@
                 <div class="field-group-adults">
                   <label class="label-title" for="adults">Взрослые:</label>
                   <div class="amount-wrapper">
-                    <input class="booking-form-field field number-field" type="text" id="adults" name="adults"
-                      placeholder="2">
                     <div class="amount-controls">
-                      <button class="amount-button" aria-label="Уменьшить количество взрослых на единицу">
+                      <button class="amount-button minus" aria-label="Уменьшить количество взрослых на единицу" type="button">
                         <svg class="amount-button-svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
                           <path d="M3 9V11H17V9H3Z" />
                         </svg>
                       </button>
-                      <button class="amount-button" aria-label="Увеличить количество взрослых на единицу">
+                      <input class="booking-form-field number-field" type="number" id="adults" name="adults"
+                      placeholder="2">
+                      <button class="amount-button plus" aria-label="Увеличить количество взрослых на единицу">
                         <svg class="amount-button-svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
                           <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" />
@@ -298,9 +298,9 @@
 
 
                 <div class="field-group-kids">
-                  <span class="form-label form-label-icon">
+                  <div class="form-label form-label-icon">
                     <label class="label-title" for="kids">Дети:</label>
-                    <span class="tooltip">
+                    <div class="tooltip">
                       <button class="tooltip-toggle" aria-labelledby="tooltip-label-date" type="button"
                         aria-label="Показать дополнительную инфо">
                         <svg class="tooltip-icon" width="26" height="26" viewBox="0 0 26 26"
@@ -308,29 +308,31 @@
                           <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7H14V9H12V7ZM14 19H12V10H14V19Z" />
                         </svg>
                       </button>
-                      <span class="tooltip-text" role="tooltip" id="tooltip-label-date">Укажите количество детей,
+                      <div class="tooltip-text-container">
+                        <span class="tooltip-text" role="tooltip" id="tooltip-label-date">Укажите количество детей,
                         которые&nbsp;будут с вами, возраст которых от 6 до 18 лет. Дети до&nbsp;6&nbsp;лет
                         размещаются бесплатно.</span>
-                    </span>
-                  </span>
-                  <div class="amount-wrapper">
-                    <input class="booking-form-field field number-field" type="text" id="kids" name="kids"
-                      placeholder="2">
-                    <div class="amount-controls">
-                      <button class="amount-button" aria-label="Уменьшить количество детей на единицу">
-                        <svg class="amount-button-svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path d="M3 9V11H17V9H3Z" />
-                        </svg>
-                      </button>
-                      <button class="amount-button" aria-label="Увеличить количество детей на единицу">
-                        <svg class="amount-button-svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" />
-                        </svg>
-                      </button>
+                      </div>
+                      </div>
                     </div>
-                  </div>
+                    <div class="amount-wrapper">
+                      <div class="amount-controls">
+                        <button class="amount-button minus" aria-label="Уменьшить количество детей на единицу" type="button">
+                          <svg class="amount-button-svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 9V11H17V9H3Z" />
+                          </svg>
+                        </button>
+                        <input class="booking-form-field number-field" type="number" id="kids" name="adults"
+                        placeholder="2">
+                        <button class="amount-button plus" aria-label="Увеличить количество детей на единицу">
+                          <svg class="amount-button-svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
                 </div>
               </div>
               <button class="booking-form-button-submit button-blue" type="submit">Найти</button>
