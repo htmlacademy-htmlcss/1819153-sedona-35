@@ -1785,9 +1785,9 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
 }
 
 /* закомментировать, если надо открыть модальное окно */
-.modal-container-close {
+/* .modal-container-close {
   display: none;
-}
+} */
 
 .modal {
   position: relative;
@@ -1964,15 +1964,23 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   justify-content: space-between;
 }
 
-.adults {
+.field-group-adults {
   display: flex;
+  justify-content: space-between;
   width: 247px;
+  margin: 0;
+  margin-bottom: 22px;
 }
 
-.kids {
+.field-group-kids {
   display: flex;
   width: 242px;
+  justify-content: space-between;
+  margin: 0;
+  margin-bottom: 22px;
 }
+
+
 
 /* .info {
   /* display: block;
@@ -2023,6 +2031,7 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   border-radius: 50%;
   width: 26px;
   height: 26px;
+  fill: #ffffff;
 }
 
 /* .tooltip-toggle:hover .tooltip-icon {
@@ -2071,6 +2080,12 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   margin-right: auto;
 }
 
+/* .booking-form:focus-within {
+  cursor: text;
+  outline: rgba(131, 179, 211, 1) solid 3px;
+  color: rgba(0, 0, 0, 0.6);
+} */
+
 .arrival-departure-field {
   width: 440px;
   padding: 12px 20px;
@@ -2082,6 +2097,7 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   font-family: "PT Sans", "Arial", sans-serif;
   font-weight: 700;
   font-size: 18px;
+  line-height: 24px;
   color: #000000;
 }
 
@@ -2112,128 +2128,54 @@ border-radius: ; что здесь должно быть? 0px 4px 4px 0px; ? П�
   color: #000000;
 }
 
-.amount {
+.amount-wrapper {
   width: 110px;
   position: relative;
 }
 
-/* .minus-plus-button {
+.amount-controls {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  top: 22px;
-  left: 15px;
-} */
-
-.adults-minus {
-  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
   box-sizing: border-box;
+}
+
+.amount-button {
   width: 20px;
   height: 20px;
-  top: 9px;
-  left: 6px;
-  /* background-image: url(../images/minus.svg); */
-  background-repeat: no-repeat;
-  background-position: center center;
+  color: #ffffff;
   background-color: transparent;
-  fill: rgba(117, 97, 87, 0.3);
   border: none;
   cursor: pointer;
-  content: "";
   padding: 0;
-}
-
-.adults-minus-svg {
-  top: 0;
-  left: 0;
-}
-
-.adults-minus:hover  {
-  /* background: #000000; */
-  fill: red;
-
-}
-
-.adults-minus:focus {
-  outline: 3px solid #82b3d3;
-  border-radius: 4px;
-  width: 20px;
-  height: 20px;
-}
-
-.adults-minus:active {
-  fill: green;
-}
-
-.adults-plus {
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  top: 16px;
-  right: 13px;
-  background-image: url("../images/plus.svg");
+  display: block;
+  align-items: center;
+  background-position: center;
   background-repeat: no-repeat;
-  background-position: center center;
 
-  /* fill: rgba(117, 97, 87, 0.3); */
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
 }
 
-.adults-plus:focus {
-  outline: 3px solid #82b3d3;
+.amount-button-svg {
+  fill: rgba(117, 97, 87, 0.3);
+  /* fill: #7DB54F; */
+}
+
+.amount-button:hover .amount-button-svg {
+  fill: #000000;
+}
+
+.amount-button:focus .amount-button-svg {
+  fill: #000000;
+
+}
+
+.amount-button:focus {
+  outline: rgb(130, 179, 211) 3px solid;
   border-radius: 4px;
-  width: 20px;
-  height: 20px;
-  top: 13px;
-  right: 10px;
-}
-
-.kids-minus {
-  position: absolute;
-  width: 15px;
-  height: 16px;
-  top: 15px;
-  left: 11px;
-  background-image: url("../images/minus.svg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  /* fill: rgba(117, 97, 87, 0.3); */
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.kids-minus:focus {
-  outline: 3px solid #82b3d3;
-  border-radius: 4px;
-  width: 20px;
-  height: 20px;
-}
-
-.kids-plus {
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  top: 16px;
-  right: 13px;
-  background-image: url("../images/plus.svg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  /* fill: rgba(117, 97, 87, 0.3); */
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.kids-plus:focus {
-  outline: 3px solid #82b3d3;
-  border-radius: 4px;
-  width: 20px;
-  height: 20px;
-  top: 13px;
-  right: 10px;
 }
 
 .number-field::placeholder {
