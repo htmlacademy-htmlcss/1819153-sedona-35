@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Каталог</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="favicon.ico"><!-- 32×32 -->
   </head>
 
   <body>
@@ -63,7 +64,7 @@
         </nav>
       </header>
 
-      <main class="main-container catalog-page">
+      <main class="main-container catalog-page" data-test="main">
         <section class="filter">
           <h2 class="visually-hidden">Фильтры для поиска гостиниц в Седоне</h2>
           <section class="filter-header">
@@ -167,11 +168,11 @@
 
                 <div class="range">
                   <div class="range-wrapper-inputs">
-                    <input id="min-price" class="range-input range-input--from" type="text" value="0"
+                    <input id="min-price" class="range-input range-input--from" type="number" value="0"
                       name="min-price">
                     <label class="catalog-filter-label catalog-filter-label--from" for="min-price">от</label>
 
-                    <input id="max-price" class="range-input range-input--to" type="text" value="9000"
+                    <input id="max-price" class="range-input range-input--to" type="number" value="9000"
                       name="max-price">
                     <label class="catalog-filter-label catalog-filter-label--to" for="max-price">до</label>
                   </div>
@@ -388,7 +389,7 @@
             <h2 class="visually-hidden">Социальные сети</h2>
             <ul class="footer-social-list">
               <li class="footer-social-item">
-                <a class="footer-social-link" href="https://vk.com/htmlacademy">
+                <a class="footer-social-link-catalog" href="https://vk.com/htmlacademy">
                   <span class="visually-hidden">Vkontakte</span>
                   <svg class="social-svg" aria-hidden="true" focusable="false" width="25" height="15" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -399,7 +400,7 @@
                 </a>
               </li>
               <li class="footer-social-item">
-                <a class="footer-social-link button-social" href="https://t.me/htmlacademy ">
+                <a class="footer-social-link-catalog button-social" href="https://t.me/htmlacademy ">
                   <span class="visually-hidden">Telegram</span>
                   <svg class="social-svg" aria-hidden="true" focusable="false" width="18" height="16" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -410,7 +411,7 @@
                 </a>
               </li>
               <li class="footer-social-item">
-                <a class="footer-social-link footer-social-link--youtube" href="https://www.youtube.com/user/htmlacademyru">
+                <a class="footer-social-link-catalog footer-social-link--youtube" href="https://www.youtube.com/user/htmlacademyru">
                   <span class="visually-hidden">Youtube</span>
                   <svg class="social-svg" aria-hidden="true" focusable="false" width="23" height="18" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
