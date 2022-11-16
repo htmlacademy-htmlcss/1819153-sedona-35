@@ -1,12 +1,12 @@
 @font-face {
-  font-family: "PT Sans", "Arial", sans-serif;
+  font-family: "PT Sans";
   font-weight: 400;
   src: url("../fonts/ptsans-400.woff2") format("woff2");
   font-display: swap;
 }
 
 @font-face {
-  font-family: "PT Sans", "Arial", sans-serif;
+  font-family: "PT Sans";
   font-weight: 700;
   src: url("../fonts/ptsans-700.woff2") format("woff2");
   font-display: swap;
@@ -18,7 +18,7 @@ html {
 
 body {
   min-height: 100%;
-  min-width: 1280px;
+  min-width: 1200px;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -99,12 +99,10 @@ body {
 .navigation-user-link {
   display: block;
   position: relative;
-  /* верхняя строчка нужна? */
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   color: #000000;
-  /* background-color: #ffffff; зачем указывать background-color? у нас же в body указан уже background - смысла нет и убрать background-color */
   text-decoration: none;
   text-transform: capitalize;
 }
@@ -216,11 +214,8 @@ body {
 }
 
 .hero {
-  /* position: relative; */
   background-color: #83b3d333;
   background-image: url("../images/divider.svg"), url("../images/hero-background.jpeg");
-  /* а размеры для бэкграунда где указывать?
-images/divider.svg*/
   background-position: center bottom, center;
   color: #000000;
   background-size: auto auto, cover;
@@ -539,11 +534,10 @@ images/divider.svg*/
   width: 1200px;
   min-height: 415px;
   background-image: url("../images/subscribe-background.jpeg");
-  /* почему не работает картинка? */
+  background-color: #a3abaa;
   color: #000000;
   background-repeat: no-repeat;
   background-size: 100% auto;
-  /* border: 1px solid #000000; */
   background-position: top center;
   text-align: center;
   padding: 98px 0 104px;
@@ -740,12 +734,18 @@ images/divider.svg*/
   fill: #ffffff;
 }
 
+.breadcrumbs-link-home {
+  width: 0;
+  height: 0;
+}
+
 .breadcrumbs-link-home:hover .breadcrumbs-link-home-svg {
   fill: rgba(255, 255, 255, 0.6);
 }
 
 .breadcrumbs-link-home:focus {
-  outline: none;
+  outline: 2px solid #83B3D3;
+  border-radius: 4px;
 }
 
 .breadcrumbs-link-home:focus .breadcrumbs-link-home-svg {
@@ -1109,7 +1109,7 @@ images/divider.svg*/
   padding: 0 3px;
 }
 
-/* здесь должны быть стили для галочек и для радиокнопок */
+/* стили для галочек и для радиокнопок */
 .subscription-button {
   background: #82B3D3;
   font-family: "PT Sans", "Arial", sans-serif;
@@ -1280,8 +1280,8 @@ images/divider.svg*/
 /* Сортировка */
 .sorting-container {
   display: flex;
+  flex-wrap: wrap;
   margin-left: auto;
-  /* margin-bottom: 16px; */
   padding: 0;
   color: #000000;
   background-color: #ffffff;
@@ -1290,7 +1290,7 @@ images/divider.svg*/
 .select {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   width: 292px;
   margin-right: 70px;
 }
@@ -1299,7 +1299,6 @@ images/divider.svg*/
 .select-control {
   width: 100%;
   padding: 12px 18px;
-  /* padding-right: 48px; */
   font-family: "PT Sans", "Arial", sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -1310,7 +1309,6 @@ images/divider.svg*/
   border: 2px solid #e5e5e5;
   border-radius: 4px;
   background-image: url("../images/arrow-down.svg");
-  /* fill: red; */
   background-repeat: no-repeat;
   background-position: right 18px center;
   appearance: none;
@@ -1324,7 +1322,6 @@ images/divider.svg*/
   border: 2px solid #68a2ca;
 }
 
-
 .select-control:active {
   outline: 2px solid #3f5e72;
 }
@@ -1332,6 +1329,13 @@ images/divider.svg*/
 .select-control:disabled {
   opacity: 0.3;
   border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.card-grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 180px;
+  gap: 8px;
 }
 
 .card-grid-toggle {
@@ -1359,10 +1363,6 @@ images/divider.svg*/
 .card-grid-toggle:active {
   outline: 2px solid #000000;
   border-radius: 4px;
-}
-
-.card-grid-toggle + .card-grid-toggle {
-  margin-left: 8px;
 }
 
 .card-grid-toggle svg {
@@ -1660,11 +1660,16 @@ images/divider.svg*/
   background-color: rgba(242, 242, 242, 0.8);
 }
 
+/* НЕ УДАЛЯТЬ! Закомментировать, если надо открыть модальное окно */
+.modal-container-close {
+  display: none;
+}
+
 .modal {
   position: relative;
   margin: auto;
   box-sizing: border-box;
-  padding: 67px 70px 63px;
+  padding: 64px 70px 64px;
   background-color: #ffffff;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
   border-radius: 30px;
@@ -1758,7 +1763,16 @@ images/divider.svg*/
 .number-field {
   width: 110px;
   padding: 0 35px;
+  text-align: center;
 }
+
+.number-field::placeholder {
+  line-height: 20px;
+  padding: 0;
+  color: #000000;
+  text-align: center;
+}
+
 
 .number-field::-webkit-outer-spin-button,
 .number-field::-webkit-inner-spin-button {
@@ -1783,8 +1797,7 @@ images/divider.svg*/
   background: #82B3D3;
   border-radius: 10px;
   border: none;
-  margin-top: 37px;
-  /* margin-bottom: 32px; */
+  margin-top: 38px;
   padding: 18px 255px;
   cursor: pointer;
   display: inline-block;
@@ -1824,11 +1837,31 @@ images/divider.svg*/
   color: #000000;
 }
 
-.calendar {
+.calendar-button {
   position: absolute;
-  top: 14px;
-  right: 22px;
+  background: url("../images/calendar.svg") no-repeat center center;
+  width: 20px;
+  height: 20px;
+  top: 15px;
+  right: 20px;
   opacity: 0.3;
+  fill: #000000;
+  display: block;
+  border: none;
+}
+
+.calendar-button:hover {
+  cursor: pointer;
+}
+
+.calendar-button:focus {
+ outline: 2px solid #83b3d3;
+ opacity: 1;
+ border-radius: 4px;
+}
+
+.calendar-button:active {
+  fill: #000000;
 }
 
 .adults-kids {
@@ -1871,8 +1904,6 @@ images/divider.svg*/
   background-color: transparent;
   padding: 0;
   margin: 0;
-  /* margin-top: 6px;
-  margin-left: 8px; */
   text-decoration: none;
   display: block;
   cursor: pointer;
@@ -1890,7 +1921,6 @@ images/divider.svg*/
   position: absolute;
   top: 26px;
   padding-top: 15px;
-  /* margin-bottom: 0; */
   left: 12px;
   transform: translateX(-50%);
   z-index: 1;
@@ -2030,9 +2060,4 @@ images/divider.svg*/
   border-radius: 4px;
 }
 
-.number-field::placeholder {
-  line-height: 20px;
-  padding: 0;
-  color: #000000;
-  text-align: center;
-}
+/* 16/11/22 */

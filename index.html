@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <title>HTML Academy: Седона</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="icon" href="favicon.ico"><!-- 32×32 -->
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
   </head>
 
   <body>
     <h2 class="visually-hidden">HTML Academy: Проект Седона</h2>
     <div class="page-container">
-
       <!-- Шапка -->
       <header class="page-header" data-test="header">
         <nav class="navigation">
@@ -19,7 +19,6 @@
           <a class="logo-link">
             <img class="logo-image" src="images/logo-sedona.svg" alt="Логотип Седона" width="140" height="70">
           </a>
-
           <ul class="navigation-list">
             <li class="navigation-item">
               <a class="navigation-link navigation-link-current">Главная</a>
@@ -31,32 +30,18 @@
               <a class="navigation-link" href="catalog.html">Гостиницы</a>
             </li>
           </ul>
-
           <ul class="navigation-user">
             <li class="navigation-user-item">
               <a class="navigation-user-link navigation-user-link--search" href="#">
                 <span class="visually-hidden">Поиск</span>
-                <!-- <svg class="navigation-icon" aria-hidden="true" focusable="false" width="20" height="20" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="m19.5 18-3.7-3.67c1-1.3 1.7-2.98 1.7-4.87a8 8 0 0 0-8-7.96c-4.4 0-8 3.68-8 8.06a8 8 0 0 0 12.9 6.26l3.7 3.68 1.4-1.5Zm-10-2.48a6 6 0 0 1-6-5.96 6 6 0 0 1 12 0 6 6 0 0 1-6 5.96Z"
-                    fill="#000" />
-                </svg> -->
               </a>
             </li>
             <li class="navigation-user-item">
               <a class="navigation-user-link  navigation-user-link--favorite" href="#">
                 <span class="visually-hidden">Избранное</span>
-                <!-- <svg class="navigation-icon" aria-hidden="true" focusable="false" width="20" height="20" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M9.9 19a.9.9 0 0 1-.8-.4c-5.4-6.1-6.7-7.5-7-7.9A5.4 5.4 0 0 1 6.5 2C7.8 2 9 2.5 10 3.3a5.46 5.46 0 0 1 9 4.1c0 1.3-.5 2.5-1.3 3.4l-7 7.9c-.2.2-.4.3-.8.3Zm-6-9.5c.3.4 3.5 4 6.1 6.9l6.2-7c.5-.5.7-1.2.7-2 0-1.8-1.5-3.3-3.3-3.3-1 0-2 .5-2.7 1.3-.3.3-.6.4-.9.4-.3 0-.6-.2-.8-.4-.7-.8-1.7-1.3-2.7-1.3-1.8 0-3.3 1.5-3.3 3.3-.1.9.3 1.6.7 2.1-.1 0-.1 0 0 0Z"
-                    fill="#000" />
-                </svg> -->
                 <span class="favorite-number">12</span>
               </a>
             </li>
-            <!--кнопка Хочу сюда! оформляется только как кнопка, но ее делать ссылкой-->
             <li class="navigation-user-item navigation-user-item--button">
               <a class="button-brown button-link" href="#">Хочу сюда!</a>
             </li>
@@ -71,7 +56,6 @@
           <img src="images/welcome.svg" alt="Добро пожаловать в прекрасную Седону потому что Гранд Каньон это не то"
             class="hero-image" width="458" height="352">
         </section>
-
         <section class="advantages" data-test="advantages">
           <h2 class="visually-hidden">Преимущества города Седона</h2>
           <p class="advantages-header">Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
@@ -115,8 +99,6 @@
               </div>
             </li>
           </ul>
-
-          <!--Можно ли заменять быстрыми клавишами класс? Alt - потому что когда выделяешь класс, который несколько раз в коде повторяется, то сразу же подсвечиваются те же самые классы-->
           <ul class="assortment-list">
             <li class="assortment-item assortment-item-lightblue">
               <div class="assortment-container">
@@ -145,7 +127,6 @@
             </li>
           </ul>
         </section>
-
         <!--Форма бронирования-->
         <section class="search-hotel" data-test="search">
           <h2 class="visually-hidden">Запрос на поиск гостиницы в городе Седона</h2>
@@ -154,7 +135,6 @@
             гостиниц в Седоне</p>
           <a href="#" class="button-link-search button-brown">Поиск гостиницы в Седоне</a>
         </section>
-        <!--v3c validator валидировать верстку надо чтобы было все правильно, ссылка в скайпе-->
       </main>
 
       <footer class="page-footer" data-test="footer">
@@ -163,17 +143,15 @@
           <h2 class="visually-hidden">Форма подписки на рассылку информации про город Седона</h2>
           <p class="subscription-call">Подпишитесь на рассылку</p>
           <p class="subscription-description">Только полезная информация и никакого спама, честное бойскаутское!</p>
-          <!--action - куда форма будет отправляться-->
           <form class="subscription-form" action="https://echo.htmlacademy.ru/" method="post">
             <label class="visually-hidden" for="subscription-email">Email</label>
             <input class="subscription-form-email" placeholder="Ваш e-mail" type="email" name="subscription-email"
-              id="subscription-email">
+              id="subscription-email" required>
             <button class="subscription-button button-blue" type="submit">Подписаться</button>
           </form>
         </section>
         <div class="social-footer-container">
           <section class="footer-social">
-            <!--список-1-social media,телефон как ссылка, img-->
             <h2 class="visually-hidden">Социальные сети</h2>
             <ul class="footer-social-list">
               <li class="footer-social-item">
@@ -209,15 +187,12 @@
               </li>
             </ul>
           </section>
-
           <section class="footer-phone">
             <h2 class="visually-hidden">Телефон</h2>
             <a href="tel:88128121212" class="contacts-phone">+7 (812) 812-12-12</a>
           </section>
-
           <section class="footer-logo">
             <h2 class="visually-hidden">Логотип</h2>
-            <!--логотип - это ссылка! Изменить!!!-->
             <a href="https://htmlacademy.ru/" class="logo-htmlacademy">
               <svg class="logo-htmlacademy-svg" aria-hidden="true" focusable="false" width="115" height="34" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -237,51 +212,53 @@
       </footer>
 
 
-<!-- Строка CSS: .modal-container-close -->
+      <!-- Строка CSS: .modal-container-close -->
       <div class="modal-container modal-container-close">
         <div class="modal modal-booking">
-          <button class="modal-close-button">
-            <!-- <button class="popover-close-button button button-light"> -->
+          <button class="modal-close-button" type="button">
             <span class="visually-hidden">Закрыть</span>
           </button>
           <section class="modal-content">
-            <!-- <div class="popover-content"> -->
             <h2 class="modal-title">Поиск гостиницы в Седоне</h2>
             <form class="booking-form" action="https://echo.htmlacademy.ru/" method="post">
               <div class="field-group">
                 <label class="label-title" for="arrival-date">Дата заезда:</label>
                 <div class="field-container">
                   <input class="arrival-departure-field" type="text" id="arrival-date" name="arrival-date"
-                    placeholder="27 апреля 2020">
-                  <img class="calendar" src="images/calendar.svg" alt="Календарь" width="17" height="17">
+                    placeholder="27 апреля 2020" required>
+                  <button class="calendar-button" type="button" aria-label="Выбрать дату заезда">
+                    <span class="visually-hidden">Выбрать дату заезда</span>
+                  </button>
                   <span class="error">Мы не можем отправить вас в прошлое.</span>
                 </div>
               </div>
-
               <div class="field-group">
                 <label class="label-title" for="departure-date">Дата выезда:</label>
                 <div class="field-container">
                   <input class="arrival-departure-field" type="text" id="departure-date" name="departure-date"
-                    placeholder="1 сентября 2023">
-                  <img class="calendar" src="images/calendar.svg" alt="Календарь" width="17" height="17">
+                    placeholder="1 сентября 2023" required>
+                  <button class="calendar-button" type="button" aria-label="Выбрать дату отъезда">
+                    <span class="visually-hidden">Выбрать дату отъезда</span>
+                  </button>
                   <span class="notification">На эти даты есть свободные номера. Пока есть.</span>
                 </div>
               </div>
-
               <div class="adults-kids">
                 <div class="field-group-adults">
                   <label class="label-title" for="adults">Взрослые:</label>
                   <div class="amount-wrapper">
                     <div class="amount-controls">
-                      <button class="amount-button minus" aria-label="Уменьшить количество взрослых на единицу" type="button">
+                      <button class="amount-button minus" aria-label="Уменьшить количество взрослых на единицу"
+                        type="button">
                         <svg class="amount-button-svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
                           <path d="M3 9V11H17V9H3Z" />
                         </svg>
                       </button>
                       <input class="booking-form-field number-field" type="number" id="adults" name="adults"
-                      placeholder="2">
-                      <button class="amount-button plus" aria-label="Увеличить количество взрослых на единицу">
+                        placeholder="2" required>
+                      <button class="amount-button plus" aria-label="Увеличить количество взрослых на единицу"
+                        type="button">
                         <svg class="amount-button-svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
                           <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" />
@@ -290,14 +267,12 @@
                     </div>
                   </div>
                 </div>
-
-
                 <div class="field-group-kids">
                   <div class="form-label form-label-icon">
                     <label class="label-title" for="kids">Дети:</label>
                     <div class="tooltip">
-                      <button class="tooltip-toggle" aria-labelledby="tooltip-label-date" type="button"
-                        aria-label="Показать дополнительную инфо">
+                      <button class="tooltip-toggle" aria-labelledby="tooltip-label-date"
+                        aria-label="Показать дополнительную инфо" type="button">
                         <svg class="tooltip-icon" width="26" height="26" viewBox="0 0 26 26"
                           xmlns="http://www.w3.org/2000/svg">
                           <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7H14V9H12V7ZM14 19H12V10H14V19Z" />
@@ -305,41 +280,41 @@
                       </button>
                       <div class="tooltip-text-container">
                         <span class="tooltip-text" role="tooltip" id="tooltip-label-date">Укажите количество детей,
-                        которые&nbsp;будут с вами, возраст которых от 6 до 18 лет. Дети до&nbsp;6&nbsp;лет
-                        размещаются бесплатно.</span>
-                      </div>
-                      </div>
-                    </div>
-                    <div class="amount-wrapper">
-                      <div class="amount-controls">
-                        <button class="amount-button minus" aria-label="Уменьшить количество детей на единицу" type="button">
-                          <svg class="amount-button-svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 9V11H17V9H3Z" />
-                          </svg>
-                        </button>
-                        <input class="booking-form-field number-field" type="number" id="kids" name="adults"
-                        placeholder="2">
-                        <button class="amount-button plus" aria-label="Увеличить количество детей на единицу">
-                          <svg class="amount-button-svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" />
-                          </svg>
-                        </button>
+                          которые&nbsp;будут с вами, возраст которых от 6 до 18 лет. Дети до&nbsp;6&nbsp;лет
+                          размещаются бесплатно.</span>
                       </div>
                     </div>
+                  </div>
+                  <div class="amount-wrapper">
+                    <div class="amount-controls">
+                      <button class="amount-button minus" aria-label="Уменьшить количество детей на единицу"
+                        type="button">
+                        <svg class="amount-button-svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path d="M3 9V11H17V9H3Z" />
+                        </svg>
+                      </button>
+                      <input class="booking-form-field number-field" type="number" id="kids" name="adults"
+                        placeholder="2" required>
+                      <button class="amount-button plus" aria-label="Увеличить количество детей на единицу"
+                        type="button">
+                        <svg class="amount-button-svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
               <button class="booking-form-button-submit button-blue" type="submit">Найти</button>
-
             </form>
           </section>
         </div>
-
       </div>
     </div>
   </body>
 
 </html>
 
-<!--строка 37: Надо ли в alt еще раз писать Избранное или это будет повторять span и тогда alt стоит оставить пустым?-->
+<!-- 16/11/22 -->
